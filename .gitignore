@@ -1,0 +1,9 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Temporary files and local server output
+*.log
+*.tmp
+
