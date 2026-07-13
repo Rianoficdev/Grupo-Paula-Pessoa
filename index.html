@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grupo Paula Pessoa</title>
   <!--
-  Base visual: TemplateMo 622 Clearwave
+  Base visual adaptada do TemplateMo 622 Clearwave
   https://templatemo.com/tm-622-clearwave
-  Free for personal and commercial use
+  Uso livre para projetos pessoais e comerciais.
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,462 +15,442 @@
   <link rel="stylesheet" href="templatemo-622-clearwave.css" />
 </head>
 <body>
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu de navegacao">
+  <!-- Menu exibido em celulares e tablets -->
+  <div class="menu-mobile" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu de navegacao">
     <a href="#inicio">Inicio</a>
     <a href="#sobre">Sobre</a>
     <a href="#servicos">Servicos</a>
-    <a href="#preventiva">Preventiva</a>
     <a href="#empresas">Unidades</a>
-    <a href="#faq">Duvidas</a>
-    <a href="#contato" class="mobile-cta btn-primary">Agendar atendimento</a>
+    <a href="#contato" class="chamada-mobile botao-principal">Agendar atendimento</a>
   </div>
 
-  <nav class="nav" id="mainNav" role="navigation" aria-label="Navegacao principal">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo nav-logo-image" aria-label="Grupo Paula Pessoa">
+  <!-- Navegacao principal -->
+  <nav class="navegacao" id="mainNav" role="navigation" aria-label="Navegacao principal">
+    <div class="interior-navegacao">
+      <a href="#" class="logo-navegacao imagem-logo-navegacao" aria-label="Grupo Paula Pessoa">
         <img src="assets/logo-paula.png" alt="Grupo Paula Pessoa" />
       </a>
-      <ul class="nav-links" role="list">
+      <ul class="links-navegacao" role="list">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#servicos">Servicos</a></li>
-        <li><a href="#preventiva">Preventiva</a></li>
         <li><a href="#empresas">Unidades</a></li>
-        <li><a href="#faq">Duvidas</a></li>
       </ul>
-      <div class="nav-cta">
-        <a href="#contato" class="btn-ghost">Contato</a>
-        <a href="#contato" class="btn-primary">Agendar atendimento</a>
+      <div class="acoes-navegacao">
+        <a href="#contato" class="botao-principal">Agendar atendimento</a>
       </div>
-      <button class="nav-hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <button class="botao-menu-mobile" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <section class="hero" id="inicio">
-    <div class="container">
-      <div class="hero-inner">
-        <div class="hero-content">
-          <img class="hero-banner-image reveal reveal-delay-1" src="assets/banner-inicio-gpp-completo.png" alt="Solucoes que acompanham voce onde estiver. Atendimento proximo, empresas integradas, servicos eficientes, tecnologia e qualidade." />
+  <!-- Banner principal -->
+  <section class="destaque-inicial" id="inicio">
+    <div class="conteiner">
+      <div class="interior-inicial">
+        <div class="conteudo-inicial">
+          <img class="imagem-banner-inicial revelar atraso-revelar-1" src="assets/banner-inicio-gpp-completo.png" alt="Solucoes que acompanham voce onde estiver. Atendimento proximo, empresas integradas, servicos eficientes, tecnologia e qualidade." />
         </div>
       </div>
     </div>
   </section>
 
-  <div class="ticker-section" id="marcas">
-    <div class="ticker-label">Empresas do Grupo Paula Pessoa</div>
-    <div class="ticker-track-wrap">
-      <div class="ticker-track logo-carousel" aria-label="Logos das empresas do Grupo Paula Pessoa">
-        <div class="ticker-group">
-          <div class="ticker-logo ticker-logo-large"><img src="assets/company-logos/clinica-carlos-ribeiro.png" alt="Clinica Carlos Ribeiro" /></div>
-          <div class="ticker-logo ticker-logo-large"><img src="assets/company-logos/laboratorio-carlos-ribeiro.png" alt="Laboratorio Carlos Ribeiro" /></div>
-          <div class="ticker-logo"><img src="assets/company-logos/regis-juca.png" alt="Regis Juca Exame Toxicologico" /></div>
-          <div class="ticker-logo"><img src="assets/company-logos/fortran.png" alt="Fortran Clinica do Transito" /></div>
-          <div class="ticker-logo"><img src="assets/company-logos/nortetran.png" alt="Nortetran Clinica do Motorista" /></div>
+  <!-- Faixa continua com as empresas do grupo -->
+  <div class="secao-faixa-logos" id="marcas">
+    <div class="rotulo-faixa-logos">Empresas do Grupo Paula Pessoa</div>
+    <div class="janela-faixa-logos">
+      <div class="trilho-faixa-logos carrossel-logos" aria-label="Logos das empresas do Grupo Paula Pessoa">
+        <div class="grupo-faixa-logos">
+          <div class="logo-faixa logo-faixa-grande"><img src="assets/company-logos/clinica-carlos-ribeiro.png" alt="Clinica Carlos Ribeiro" /></div>
+          <div class="logo-faixa logo-faixa-grande"><img src="assets/company-logos/laboratorio-carlos-ribeiro.png" alt="Laboratorio Carlos Ribeiro" /></div>
+          <div class="logo-faixa"><img src="assets/company-logos/regis-juca.png" alt="Regis Juca Exame Toxicologico" /></div>
+          <div class="logo-faixa"><img src="assets/company-logos/fortran.png" alt="Fortran Clinica do Transito" /></div>
+          <div class="logo-faixa"><img src="assets/company-logos/nortetran.png" alt="Nortetran Clinica do Motorista" /></div>
         </div>
-        <div class="ticker-group" aria-hidden="true">
-          <div class="ticker-logo ticker-logo-large"><img src="assets/company-logos/clinica-carlos-ribeiro.png" alt="" /></div>
-          <div class="ticker-logo ticker-logo-large"><img src="assets/company-logos/laboratorio-carlos-ribeiro.png" alt="" /></div>
-          <div class="ticker-logo"><img src="assets/company-logos/regis-juca.png" alt="" /></div>
-          <div class="ticker-logo"><img src="assets/company-logos/fortran.png" alt="" /></div>
-          <div class="ticker-logo"><img src="assets/company-logos/nortetran.png" alt="" /></div>
+        <div class="grupo-faixa-logos" aria-hidden="true">
+          <div class="logo-faixa logo-faixa-grande"><img src="assets/company-logos/clinica-carlos-ribeiro.png" alt="" /></div>
+          <div class="logo-faixa logo-faixa-grande"><img src="assets/company-logos/laboratorio-carlos-ribeiro.png" alt="" /></div>
+          <div class="logo-faixa"><img src="assets/company-logos/regis-juca.png" alt="" /></div>
+          <div class="logo-faixa"><img src="assets/company-logos/fortran.png" alt="" /></div>
+          <div class="logo-faixa"><img src="assets/company-logos/nortetran.png" alt="" /></div>
         </div>
       </div>
     </div>
   </div>
 
-  <section class="pricing-section" id="empresas">
-    <div class="container units-container">
-      <div class="group-about reveal" id="sobre">
-        <div class="group-about-main">
-          <div class="group-about-copy">
-            <div class="group-about-kicker"><span></span>Sobre o grupo</div>
-            <h2>Sobre o<span class="group-name-line">Grupo <em>Paula Pessoa</em></span></h2>
-            <div class="group-about-tagline">Tecnologia <b>&bull;</b> Confian&ccedil;a <b>&bull;</b> Humaniza&ccedil;&atilde;o</div>
+  <!-- Historia, posicionamento e valores do Grupo Paula Pessoa -->
+  <section class="secao-sobre-grupo">
+    <div class="conteiner">
+      <div class="sobre-grupo revelar" id="sobre">
+        <div class="principal-sobre-grupo">
+          <div class="texto-sobre-grupo">
+            <div class="rotulo-sobre-grupo"><span></span>Sobre o grupo</div>
+            <h2>Sobre o<span class="linha-nome-grupo">Grupo <em>Paula Pessoa</em></span></h2>
+            <div class="frase-sobre-grupo">Tecnologia <b>&bull;</b> Confian&ccedil;a <b>&bull;</b> Humaniza&ccedil;&atilde;o</div>
             <p>O Grupo Paula Pessoa nasceu do compromisso com a sa&uacute;de e o bem-estar das pessoas, unindo experi&ecirc;ncia, tecnologia e responsabilidade em diferentes &aacute;reas de atua&ccedil;&atilde;o.</p>
             <p>Integramos servi&ccedil;os de sa&uacute;de, diagn&oacute;stico, medicina de tr&aacute;fego e toxicologia para entregar solu&ccedil;&otilde;es completas, seguras e humanizadas em cada etapa do atendimento.</p>
-            <div class="group-about-actions">
-              <a class="group-about-primary" href="#unidades">Conhe&ccedil;a nossas unidades <span aria-hidden="true">&rarr;</span></a>
-              <a class="group-about-secondary" href="#contato">Fale conosco</a>
+            <div class="acoes-sobre-grupo">
+              <a class="botao-principal-sobre-grupo" href="#unidades">Conhe&ccedil;a nossas unidades <span aria-hidden="true">&rarr;</span></a>
+              <a class="botao-secundario-sobre-grupo" href="#contato">Fale conosco</a>
             </div>
           </div>
 
-          <div class="group-about-visual" aria-label="Atuacao integrada do Grupo Paula Pessoa">
-            <div class="about-photo about-photo-lab" role="img" aria-label="Fachada do Laboratorio Carlos Ribeiro Parquelandia"></div>
-            <div class="about-photo about-photo-care" role="img" aria-label="Fachada da Clinica Carlos Ribeiro Aldeota"></div>
-            <div class="about-photo about-photo-transit" role="img" aria-label="Unidade Rio Mar Kennedy com atendimento clinico e de transito"></div>
-            <div class="about-logo-card"><img src="assets/logo-paula.png" alt="Grupo Paula Pessoa" /></div>
+          <div class="visual-sobre-grupo" aria-label="Atuacao integrada do Grupo Paula Pessoa">
+            <div class="foto-sobre foto-sobre-laboratorio" role="img" aria-label="Fachada do Laboratorio Carlos Ribeiro Parquelandia"></div>
+            <div class="foto-sobre foto-sobre-clinica" role="img" aria-label="Fachada da Clinica Carlos Ribeiro Aldeota"></div>
+            <div class="foto-sobre foto-sobre-transito" role="img" aria-label="Unidade Rio Mar Kennedy com atendimento clinico e de transito"></div>
+            <div class="cartao-logo-sobre"><img src="assets/logo-paula.png" alt="Grupo Paula Pessoa" /></div>
           </div>
         </div>
 
-        <div class="group-about-values" aria-label="Pilares do Grupo Paula Pessoa">
+        <div class="valores-sobre-grupo" aria-label="Pilares do Grupo Paula Pessoa">
           <div><i aria-hidden="true">&#9825;</i><strong>Compromisso<br />com a vida</strong><span>Cuidamos de pessoas em todas as etapas.</span></div>
           <div><i aria-hidden="true">&#10003;</i><strong>Qualidade<br />em cada detalhe</strong><span>Processos seguros, tecnologia e precis&atilde;o.</span></div>
           <div><i aria-hidden="true">&#9671;</i><strong>Atendimento<br />humanizado</strong><span>Respeito, empatia e aten&ccedil;&atilde;o em cada contato.</span></div>
           <div><i aria-hidden="true">&#8599;</i><strong>Inova&ccedil;&atilde;o<br />que transforma</strong><span>Evolu&ccedil;&atilde;o constante para melhores resultados.</span></div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="units-heading reveal" id="unidades">
+  <!-- Principais areas de atuacao -->
+  <section class="secao-areas" id="servicos">
+    <div class="conteiner conteiner-areas">
+      <header class="cabecalho-areas revelar">
+        <div class="rotulo-areas"><span></span>Nossas especialidades</div>
+        <h2>&Aacute;reas de <em>atua&ccedil;&atilde;o</em></h2>
+        <div class="linha-areas"></div>
+        <p>Atuamos em &aacute;reas complementares para oferecer solu&ccedil;&otilde;es integradas, seguras e humanizadas em cada etapa do atendimento.</p>
+      </header>
+
+      <div class="grade-areas">
+        <article class="cartao-area area-saude revelar" id="preventiva">
+          <div class="icone-area"><i data-lucide="heart-pulse" aria-hidden="true"></i></div>
+          <h3>Sa&uacute;de</h3>
+          <p>Atendimento especializado com foco em cuidado, preven&ccedil;&atilde;o e bem-estar.</p>
+          <a href="#unidades">Saiba mais <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="cartao-area area-diagnostico revelar atraso-revelar-1">
+          <div class="icone-area"><i data-lucide="microscope" aria-hidden="true"></i></div>
+          <h3>Diagn&oacute;stico</h3>
+          <p>Exames, an&aacute;lises e suporte t&eacute;cnico com precis&atilde;o e agilidade.</p>
+          <a href="#unidades">Saiba mais <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="cartao-area area-transito revelar atraso-revelar-2">
+          <div class="icone-area"><i data-lucide="steering-wheel" aria-hidden="true"></i></div>
+          <h3>Medicina de Tr&aacute;fego</h3>
+          <p>Avalia&ccedil;&otilde;es e servi&ccedil;os voltados &agrave; seguran&ccedil;a e aptid&atilde;o no tr&acirc;nsito.</p>
+          <a href="#unidades">Saiba mais <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="cartao-area area-toxicologia revelar atraso-revelar-3">
+          <div class="icone-area"><i data-lucide="flask-conical" aria-hidden="true"></i></div>
+          <h3>Toxicologia</h3>
+          <p>Solu&ccedil;&otilde;es laboratoriais e an&aacute;lises com confiabilidade e rigor t&eacute;cnico.</p>
+          <a href="#unidades">Saiba mais <span aria-hidden="true">&rarr;</span></a>
+        </article>
+      </div>
+
+      <a class="chamada-areas revelar" href="#unidades"><i data-lucide="users" aria-hidden="true"></i>Conhe&ccedil;a todas as nossas unidades <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </section>
+
+  <!-- Filtros e carrossel das empresas e unidades -->
+  <section class="secao-unidades" id="empresas">
+    <div class="conteiner conteiner-unidades">
+      <div class="cabecalho-unidades revelar" id="unidades">
         <div>
-          <h2 class="section-title">Encontre a empresa <em>certa para voce</em></h2>
-          <p class="section-sub">Servicos integrados em saude, diagnostico, toxicologia e atendimento ao condutor.</p>
+          <h2 class="titulo-secao">Encontre a empresa <em>certa para voce</em></h2>
+          <p class="subtitulo-secao">Servicos integrados em saude, diagnostico, toxicologia e atendimento ao condutor.</p>
         </div>
-        <div class="units-toolbar unit-icon-filters" aria-label="Filtrar unidades">
-          <button class="unit-filter-btn" type="button" data-unit-filter="saude" aria-label="Mostrar Clinica Carlos Ribeiro" aria-pressed="false" title="Clinica Carlos Ribeiro">
+        <div class="ferramentas-unidades filtros-icones-unidade" aria-label="Filtrar unidades">
+          <button class="botao-filtro-unidade" type="button" data-unit-filter="saude" aria-label="Mostrar Clinica Carlos Ribeiro" aria-pressed="false" title="Clinica Carlos Ribeiro">
             <img src="assets/unit-icons/clinica.png" alt="" />
           </button>
-          <button class="unit-filter-btn" type="button" data-unit-filter="laboratorio" aria-label="Mostrar Laboratorio Carlos Ribeiro" aria-pressed="false" title="Laboratorio Carlos Ribeiro">
+          <button class="botao-filtro-unidade" type="button" data-unit-filter="laboratorio" aria-label="Mostrar Laboratorio Carlos Ribeiro" aria-pressed="false" title="Laboratorio Carlos Ribeiro">
             <img src="assets/unit-icons/laboratorio.png" alt="" />
           </button>
-          <button class="unit-filter-btn" type="button" data-unit-filter="toxicologia" aria-label="Mostrar Regis Juca" aria-pressed="false" title="Regis Juca">
+          <button class="botao-filtro-unidade" type="button" data-unit-filter="toxicologia" aria-label="Mostrar Regis Juca" aria-pressed="false" title="Regis Juca">
             <img src="assets/unit-icons/regis-juca.png" alt="" />
           </button>
-          <button class="unit-filter-btn" type="button" data-unit-filter="transito" aria-label="Mostrar Fortran Clinica do Transito" aria-pressed="false" title="Fortran Clinica do Transito">
+          <button class="botao-filtro-unidade" type="button" data-unit-filter="transito" aria-label="Mostrar Fortran Clinica do Transito" aria-pressed="false" title="Fortran Clinica do Transito">
             <img src="assets/unit-icons/fortran.png" alt="" />
           </button>
         </div>
       </div>
 
-      <div class="units-carousel">
-        <button class="units-carousel-btn units-carousel-prev" id="unitsPrev" type="button" aria-label="Ver unidades anteriores" disabled>&lsaquo;</button>
-        <div class="units-grid" id="unitsGrid">
-        <article class="unit-card reveal" data-unit="saude">
-          <div class="unit-image unit-image-clinic-aldeota" role="img" aria-label="Fachada da Clinica Carlos Ribeiro Aldeota"></div>
-          <div class="unit-body">
-            <div class="unit-title-row"><h3>Clinica Carlos Ribeiro<span class="unit-location-name">Aldeota</span></h3><span class="unit-online">Online</span></div>
-            <p class="unit-address">Av. Bar&atilde;o de Studart, 1182 - Aldeota, Fortaleza - CE</p>
-            <div class="unit-contact-links">
+      <div class="carrossel-unidades">
+        <button class="botao-carrossel-unidades unidades-anteriores" id="unitsPrev" type="button" aria-label="Ver unidades anteriores" disabled>&lsaquo;</button>
+        <div class="grade-unidades" id="unitsGrid">
+        <article class="cartao-unidade revelar" data-unit="saude">
+          <div class="imagem-unidade imagem-clinica-aldeota" role="img" aria-label="Fachada da Clinica Carlos Ribeiro Aldeota"></div>
+          <div class="corpo-unidade">
+            <div class="linha-titulo-unidade"><h3>Clinica Carlos Ribeiro<span class="nome-local-unidade">Aldeota</span></h3><span class="status-unidade">Online</span></div>
+            <p class="endereco-unidade">Av. Bar&atilde;o de Studart, 1182 - Aldeota, Fortaleza - CE</p>
+            <div class="contatos-unidade">
               <a href="https://www.instagram.com/clinicacarlosribeiro" target="_blank" rel="noopener">@clinicacarlosribeiro</a>
               <a href="https://wa.me/5585999617358" target="_blank" rel="noopener">(85) 99961-7358</a>
               <a href="tel:08007777358">0800 777 7358</a>
             </div>
-            <div class="unit-divider"></div>
-            <strong class="unit-services-title">Principais servicos</strong>
-            <ul class="unit-services"><li>Consultas medicas</li><li>Exames basicos</li><li>Atendimento especializado</li></ul>
-            <a class="unit-access" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
+            <div class="divisor-unidade"></div>
+            <strong class="titulo-servicos-unidade">Principais servicos</strong>
+            <ul class="servicos-unidade"><li>Consultas medicas</li><li>Exames basicos</li><li>Atendimento especializado</li></ul>
+            <a class="acesso-unidade" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
-        <article class="unit-card reveal reveal-delay-1" data-unit="laboratorio">
-          <div class="unit-image unit-image-lab" role="img" aria-label="Profissional no Laboratorio Carlos Ribeiro"></div>
-          <div class="unit-body">
-            <div class="unit-title-row"><h3>Laboratorio Carlos Ribeiro<span class="unit-location-name">Unidade 01</span></h3><span class="unit-online">Online</span></div>
-            <p class="unit-description">Analises clinicas e exames laboratoriais com precisao, agilidade e orientacao clara.</p>
-            <div class="unit-divider"></div>
-            <strong class="unit-services-title">Principais servicos</strong>
-            <ul class="unit-services"><li>Coleta laboratorial</li><li>Analises clinicas</li><li>Apoio ao diagnostico</li></ul>
-            <a class="unit-access unit-access-teal" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
+        <article class="cartao-unidade revelar atraso-revelar-1" data-unit="laboratorio">
+          <div class="imagem-unidade imagem-unidade-laboratorio" role="img" aria-label="Profissional no Laboratorio Carlos Ribeiro"></div>
+          <div class="corpo-unidade">
+            <div class="linha-titulo-unidade"><h3>Laboratorio Carlos Ribeiro<span class="nome-local-unidade">Unidade 01</span></h3><span class="status-unidade">Online</span></div>
+            <p class="descricao-unidade">Analises clinicas e exames laboratoriais com precisao, agilidade e orientacao clara.</p>
+            <div class="divisor-unidade"></div>
+            <strong class="titulo-servicos-unidade">Principais servicos</strong>
+            <ul class="servicos-unidade"><li>Coleta laboratorial</li><li>Analises clinicas</li><li>Apoio ao diagnostico</li></ul>
+            <a class="acesso-unidade acesso-unidade-verde" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
-        <article class="unit-card reveal reveal-delay-2" data-unit="transito">
-          <div class="unit-image unit-image-fortran" role="img" aria-label="Fachada da Fortran Clinica do Transito"></div>
-          <div class="unit-body">
-            <div class="unit-title-row"><h3>Fortran Clinica do Transito<span class="unit-location-name">Unidade 01</span></h3><span class="unit-online">Online</span></div>
-            <p class="unit-description">Exames e avaliacoes especializados para condutores, com seguranca e rapidez.</p>
-            <div class="unit-divider"></div>
-            <strong class="unit-services-title">Principais servicos</strong>
-            <ul class="unit-services"><li>Exames medicos</li><li>Avaliacoes para CNH</li><li>Orientacao documental</li></ul>
-            <a class="unit-access unit-access-purple" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
+        <article class="cartao-unidade revelar atraso-revelar-2" data-unit="transito">
+          <div class="imagem-unidade imagem-unidade-fortran" role="img" aria-label="Fachada da Fortran Clinica do Transito"></div>
+          <div class="corpo-unidade">
+            <div class="linha-titulo-unidade"><h3>Fortran Clinica do Transito<span class="nome-local-unidade">Unidade 01</span></h3><span class="status-unidade">Online</span></div>
+            <p class="descricao-unidade">Exames e avaliacoes especializados para condutores, com seguranca e rapidez.</p>
+            <div class="divisor-unidade"></div>
+            <strong class="titulo-servicos-unidade">Principais servicos</strong>
+            <ul class="servicos-unidade"><li>Exames medicos</li><li>Avaliacoes para CNH</li><li>Orientacao documental</li></ul>
+            <a class="acesso-unidade acesso-unidade-roxo" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
-        <article class="unit-card reveal reveal-delay-3" data-unit="toxicologia">
-          <div class="unit-image unit-image-regis" role="img" aria-label="Laboratorio de toxicologia Regis Juca"></div>
-          <div class="unit-body">
-            <div class="unit-title-row"><h3>Regis Juca Exame Toxicologico<span class="unit-location-name">Unidade 01</span></h3><span class="unit-online">Online</span></div>
-            <p class="unit-description">Exames toxicologicos com confiabilidade, orientacao e atendimento objetivo.</p>
-            <div class="unit-divider"></div>
-            <strong class="unit-services-title">Principais servicos</strong>
-            <ul class="unit-services"><li>Coleta toxicologica</li><li>Exames para condutores</li><li>Orientacao de documentos</li></ul>
-            <a class="unit-access" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
+        <article class="cartao-unidade revelar atraso-revelar-3" data-unit="toxicologia">
+          <div class="imagem-unidade imagem-unidade-regis" role="img" aria-label="Laboratorio de toxicologia Regis Juca"></div>
+          <div class="corpo-unidade">
+            <div class="linha-titulo-unidade"><h3>Regis Juca Exame Toxicologico<span class="nome-local-unidade">Unidade 01</span></h3><span class="status-unidade">Online</span></div>
+            <p class="descricao-unidade">Exames toxicologicos com confiabilidade, orientacao e atendimento objetivo.</p>
+            <div class="divisor-unidade"></div>
+            <strong class="titulo-servicos-unidade">Principais servicos</strong>
+            <ul class="servicos-unidade"><li>Coleta toxicologica</li><li>Exames para condutores</li><li>Orientacao de documentos</li></ul>
+            <a class="acesso-unidade" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
-        <article class="unit-card reveal" data-unit="saude">
-          <div class="unit-image unit-image-clinic-giga" role="img" aria-label="Fachada da Clinica Carlos Ribeiro Giga Mall"></div>
-          <div class="unit-body">
-            <div class="unit-title-row"><h3>Clinica Carlos Ribeiro<span class="unit-location-name">Giga Mall</span></h3><span class="unit-online">Online</span></div>
-            <p class="unit-address">R. Jos&eacute; Hip&oacute;lito, 264 - Messejana, Fortaleza - CE</p>
-            <div class="unit-contact-links">
+        <article class="cartao-unidade revelar" data-unit="saude">
+          <div class="imagem-unidade imagem-clinica-giga" role="img" aria-label="Fachada da Clinica Carlos Ribeiro Giga Mall"></div>
+          <div class="corpo-unidade">
+            <div class="linha-titulo-unidade"><h3>Clinica Carlos Ribeiro<span class="nome-local-unidade">Giga Mall</span></h3><span class="status-unidade">Online</span></div>
+            <p class="endereco-unidade">R. Jos&eacute; Hip&oacute;lito, 264 - Messejana, Fortaleza - CE</p>
+            <div class="contatos-unidade">
               <a href="https://www.instagram.com/clinicacarlosribeiro" target="_blank" rel="noopener">@clinicacarlosribeiro</a>
               <a href="https://wa.me/5585999617358" target="_blank" rel="noopener">(85) 99961-7358</a>
               <a href="tel:08007777358">0800 777 7358</a>
             </div>
-            <div class="unit-divider"></div>
-            <strong class="unit-services-title">Principais servicos</strong>
-            <ul class="unit-services"><li>Consultas medicas</li><li>Acompanhamento preventivo</li><li>Atendimento especializado</li></ul>
-            <a class="unit-access" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
+            <div class="divisor-unidade"></div>
+            <strong class="titulo-servicos-unidade">Principais servicos</strong>
+            <ul class="servicos-unidade"><li>Consultas medicas</li><li>Acompanhamento preventivo</li><li>Atendimento especializado</li></ul>
+            <a class="acesso-unidade" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
-        <article class="unit-card reveal" data-unit="saude">
-          <div class="unit-image unit-image-clinic-kennedy" role="img" aria-label="Recepcao da Clinica Carlos Ribeiro Rio Mar Kennedy"></div>
-          <div class="unit-body">
-            <div class="unit-title-row"><h3>Clinica Carlos Ribeiro<span class="unit-location-name">Rio Mar Kennedy</span></h3><span class="unit-online">Online</span></div>
-            <p class="unit-address">Av. Sargento Herm&iacute;nio Sampaio, 3100 - Presidente Kennedy, Fortaleza - CE</p>
-            <div class="unit-contact-links">
+        <article class="cartao-unidade revelar" data-unit="saude">
+          <div class="imagem-unidade imagem-clinica-kennedy" role="img" aria-label="Recepcao da Clinica Carlos Ribeiro Rio Mar Kennedy"></div>
+          <div class="corpo-unidade">
+            <div class="linha-titulo-unidade"><h3>Clinica Carlos Ribeiro<span class="nome-local-unidade">Rio Mar Kennedy</span></h3><span class="status-unidade">Online</span></div>
+            <p class="endereco-unidade">Av. Sargento Herm&iacute;nio Sampaio, 3100 - Presidente Kennedy, Fortaleza - CE</p>
+            <div class="contatos-unidade">
               <a href="https://www.instagram.com/clinicacarlosribeiro" target="_blank" rel="noopener">@clinicacarlosribeiro</a>
               <a href="https://wa.me/5585999617358" target="_blank" rel="noopener">(85) 99961-7358</a>
               <a href="tel:08007777358">0800 777 7358</a>
             </div>
-            <div class="unit-divider"></div>
-            <strong class="unit-services-title">Principais servicos</strong>
-            <ul class="unit-services"><li>Consultas medicas</li><li>Acompanhamento preventivo</li><li>Atendimento especializado</li></ul>
-            <a class="unit-access" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
+            <div class="divisor-unidade"></div>
+            <strong class="titulo-servicos-unidade">Principais servicos</strong>
+            <ul class="servicos-unidade"><li>Consultas medicas</li><li>Acompanhamento preventivo</li><li>Atendimento especializado</li></ul>
+            <a class="acesso-unidade" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
-        <article class="unit-card reveal" data-unit="saude">
-          <div class="unit-image unit-image-clinic-north" role="img" aria-label="Fachada da Clinica Carlos Ribeiro North Shopping"></div>
-          <div class="unit-body">
-            <div class="unit-title-row"><h3>Clinica Carlos Ribeiro<span class="unit-location-name">North Shopping</span></h3><span class="unit-online">Online</span></div>
-            <p class="unit-address">Av. Bezerra de Menezes, 2450 - Presidente Kennedy, Fortaleza - CE - Piso L3, ao lado do Detran</p>
-            <div class="unit-contact-links">
+        <article class="cartao-unidade revelar" data-unit="saude">
+          <div class="imagem-unidade imagem-clinica-north" role="img" aria-label="Fachada da Clinica Carlos Ribeiro North Shopping"></div>
+          <div class="corpo-unidade">
+            <div class="linha-titulo-unidade"><h3>Clinica Carlos Ribeiro<span class="nome-local-unidade">North Shopping</span></h3><span class="status-unidade">Online</span></div>
+            <p class="endereco-unidade">Av. Bezerra de Menezes, 2450 - Presidente Kennedy, Fortaleza - CE - Piso L3, ao lado do Detran</p>
+            <div class="contatos-unidade">
               <a href="https://www.instagram.com/clinicacarlosribeiro" target="_blank" rel="noopener">@clinicacarlosribeiro</a>
               <a href="https://wa.me/5585999617358" target="_blank" rel="noopener">(85) 99961-7358</a>
               <a href="tel:08007777358">0800 777 7358</a>
             </div>
-            <div class="unit-divider"></div>
-            <strong class="unit-services-title">Principais servicos</strong>
-            <ul class="unit-services"><li>Consultas medicas</li><li>Acompanhamento preventivo</li><li>Atendimento especializado</li></ul>
-            <a class="unit-access" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
+            <div class="divisor-unidade"></div>
+            <strong class="titulo-servicos-unidade">Principais servicos</strong>
+            <ul class="servicos-unidade"><li>Consultas medicas</li><li>Acompanhamento preventivo</li><li>Atendimento especializado</li></ul>
+            <a class="acesso-unidade" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
-        <article class="unit-card reveal" data-unit="laboratorio">
-          <div class="unit-image unit-image-lab" role="img" aria-label="Exemplo de nova unidade do Laboratorio Carlos Ribeiro"></div>
-          <div class="unit-body">
-            <span class="unit-demo-label">Unidade demonstrativa</span>
-            <div class="unit-title-row"><h3>Laboratorio Carlos Ribeiro<span class="unit-location-name">Unidade 02</span></h3><span class="unit-online">Online</span></div>
-            <p class="unit-description">Exemplo de nova unidade de coleta e analises laboratoriais integrada ao grupo.</p>
-            <div class="unit-divider"></div>
-            <strong class="unit-services-title">Principais servicos</strong>
-            <ul class="unit-services"><li>Coleta laboratorial</li><li>Analises clinicas</li><li>Entrega de resultados</li></ul>
-            <a class="unit-access unit-access-teal" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
+        <article class="cartao-unidade revelar" data-unit="laboratorio">
+          <div class="imagem-unidade imagem-unidade-laboratorio" role="img" aria-label="Exemplo de nova unidade do Laboratorio Carlos Ribeiro"></div>
+          <div class="corpo-unidade">
+            <span class="rotulo-unidade-demonstrativa">Unidade demonstrativa</span>
+            <div class="linha-titulo-unidade"><h3>Laboratorio Carlos Ribeiro<span class="nome-local-unidade">Unidade 02</span></h3><span class="status-unidade">Online</span></div>
+            <p class="descricao-unidade">Exemplo de nova unidade de coleta e analises laboratoriais integrada ao grupo.</p>
+            <div class="divisor-unidade"></div>
+            <strong class="titulo-servicos-unidade">Principais servicos</strong>
+            <ul class="servicos-unidade"><li>Coleta laboratorial</li><li>Analises clinicas</li><li>Entrega de resultados</li></ul>
+            <a class="acesso-unidade acesso-unidade-verde" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
-        <article class="unit-card reveal" data-unit="transito">
-          <div class="unit-image unit-image-fortran" role="img" aria-label="Exemplo de nova unidade da Fortran Clinica do Transito"></div>
-          <div class="unit-body">
-            <span class="unit-demo-label">Unidade demonstrativa</span>
-            <div class="unit-title-row"><h3>Fortran Clinica do Transito<span class="unit-location-name">Unidade 02</span></h3><span class="unit-online">Online</span></div>
-            <p class="unit-description">Exemplo de nova unidade preparada para exames e avaliacoes de condutores.</p>
-            <div class="unit-divider"></div>
-            <strong class="unit-services-title">Principais servicos</strong>
-            <ul class="unit-services"><li>Exames medicos</li><li>Avaliacoes para CNH</li><li>Suporte documental</li></ul>
-            <a class="unit-access unit-access-purple" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
+        <article class="cartao-unidade revelar" data-unit="transito">
+          <div class="imagem-unidade imagem-unidade-fortran" role="img" aria-label="Exemplo de nova unidade da Fortran Clinica do Transito"></div>
+          <div class="corpo-unidade">
+            <span class="rotulo-unidade-demonstrativa">Unidade demonstrativa</span>
+            <div class="linha-titulo-unidade"><h3>Fortran Clinica do Transito<span class="nome-local-unidade">Unidade 02</span></h3><span class="status-unidade">Online</span></div>
+            <p class="descricao-unidade">Exemplo de nova unidade preparada para exames e avaliacoes de condutores.</p>
+            <div class="divisor-unidade"></div>
+            <strong class="titulo-servicos-unidade">Principais servicos</strong>
+            <ul class="servicos-unidade"><li>Exames medicos</li><li>Avaliacoes para CNH</li><li>Suporte documental</li></ul>
+            <a class="acesso-unidade acesso-unidade-roxo" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
-        <article class="unit-card reveal" data-unit="toxicologia">
-          <div class="unit-image unit-image-regis" role="img" aria-label="Exemplo de nova unidade Regis Juca"></div>
-          <div class="unit-body">
-            <span class="unit-demo-label">Unidade demonstrativa</span>
-            <div class="unit-title-row"><h3>Regis Juca Exame Toxicologico<span class="unit-location-name">Unidade 02</span></h3><span class="unit-online">Online</span></div>
-            <p class="unit-description">Exemplo de nova unidade para coleta e orientacao de exames toxicologicos.</p>
-            <div class="unit-divider"></div>
-            <strong class="unit-services-title">Principais servicos</strong>
-            <ul class="unit-services"><li>Coleta toxicologica</li><li>Exames para condutores</li><li>Orientacao documental</li></ul>
-            <a class="unit-access" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
+        <article class="cartao-unidade revelar" data-unit="toxicologia">
+          <div class="imagem-unidade imagem-unidade-regis" role="img" aria-label="Exemplo de nova unidade Regis Juca"></div>
+          <div class="corpo-unidade">
+            <span class="rotulo-unidade-demonstrativa">Unidade demonstrativa</span>
+            <div class="linha-titulo-unidade"><h3>Regis Juca Exame Toxicologico<span class="nome-local-unidade">Unidade 02</span></h3><span class="status-unidade">Online</span></div>
+            <p class="descricao-unidade">Exemplo de nova unidade para coleta e orientacao de exames toxicologicos.</p>
+            <div class="divisor-unidade"></div>
+            <strong class="titulo-servicos-unidade">Principais servicos</strong>
+            <ul class="servicos-unidade"><li>Coleta toxicologica</li><li>Exames para condutores</li><li>Orientacao documental</li></ul>
+            <a class="acesso-unidade" href="#contato">Acessar unidade <span aria-hidden="true">↗</span></a>
           </div>
         </article>
         </div>
-        <button class="units-carousel-btn units-carousel-next" id="unitsNext" type="button" aria-label="Ver proximas unidades">&rsaquo;</button>
+        <button class="botao-carrossel-unidades proximas-unidades" id="unitsNext" type="button" aria-label="Ver proximas unidades">&rsaquo;</button>
       </div>
     </div>
   </section>
 
-  <section class="features-section" id="servicos">
-    <div class="container">
-      <div class="features-header">
-        <div class="section-label reveal">Servicos</div>
-        <h2 class="section-title reveal reveal-delay-1">Cuidado completo em <em>medicina preventiva</em></h2>
-        <p class="section-sub reveal reveal-delay-2">A proposta do grupo e facilitar o acesso a acompanhamento, exames e diagnosticos com uma experiencia moderna e acolhedora.</p>
-      </div>
+  <!-- Indicadores institucionais -->
+  <section class="secao-numeros" id="numeros">
+    <div class="conteiner">
+      <header class="cabecalho-numeros revelar">
+        <div class="rotulo-numeros">Nossos n&uacute;meros</div>
+        <h2>Indicadores da nossa atua&ccedil;&atilde;o</h2>
+        <p>N&uacute;meros que refletem nosso compromisso com a sa&uacute;de,<br />a excel&ecirc;ncia e a experi&ecirc;ncia de quem confia no <strong>Grupo Paula Pessoa.</strong></p>
+      </header>
 
-      <div class="feature-row" id="preventiva">
-        <div class="feature-content reveal">
-          <div class="feature-number">01 - Medicina preventiva</div>
-          <h3 class="feature-title">Cuidar antes dos sintomas aparecerem</h3>
-          <p class="feature-desc">A Clinica Carlos Ribeiro e o Laboratorio Carlos Ribeiro trabalham como frentes complementares para acolher, orientar e apoiar decisoes de saude com base em dados.</p>
-          <div class="feature-checklist">
-            <div class="feature-check"><div class="check-icon">✓</div><span>Recepcao e orientacao ao paciente</span></div>
-            <div class="feature-check"><div class="check-icon">✓</div><span>Encaminhamento para exames quando necessario</span></div>
-            <div class="feature-check"><div class="check-icon">✓</div><span>Comunicacao simples sobre proximos passos</span></div>
-          </div>
+      <div class="grade-numeros">
+        <div class="cartao-numero revelar">
+          <div class="icone-numero"><i data-lucide="hospital" aria-hidden="true"></i></div>
+          <div class="valor-numero"><span class="numero-animado" data-target="6">0</span></div>
+          <div class="linha-numero"></div>
+          <div class="rotulo-numero">Marcas e unidades</div>
+          <div class="subtitulo-numero">Cl&iacute;nica, laborat&oacute;rio, tr&acirc;nsito e toxicol&oacute;gico</div>
         </div>
-        <div class="feature-visual reveal reveal-delay-1">
-          <div class="feature-visual-inner">
-            <div class="fv-row">
-              <div class="fv-card">
-                <div class="fv-card-label">Clinica</div>
-                <div class="fv-card-val">Consulta</div>
-                <div class="fv-card-bar"><div class="fv-card-bar-fill" style="width:82%"></div></div>
-              </div>
-              <div class="fv-card">
-                <div class="fv-card-label">Laboratorio</div>
-                <div class="fv-card-val">Exames</div>
-                <div class="fv-card-bar"><div class="fv-card-bar-fill" style="width:76%"></div></div>
-              </div>
-            </div>
-            <div class="fv-card">
-              <div class="fv-card-label">Fluxo do paciente</div>
-              <div class="fv-list" style="margin-top:8px">
-                <div class="fv-list-item"><span class="fv-list-name">Atendimento inicial</span><span class="fv-pill green">Clinica</span></div>
-                <div class="fv-list-item"><span class="fv-list-name">Coleta e exames</span><span class="fv-pill blue">Lab</span></div>
-                <div class="fv-list-item"><span class="fv-list-name">Retorno e orientacao</span><span class="fv-pill dim">Cuidado</span></div>
-              </div>
-            </div>
-          </div>
+        <div class="cartao-numero revelar atraso-revelar-1">
+          <div class="icone-numero"><i data-lucide="stethoscope" aria-hidden="true"></i></div>
+          <div class="valor-numero"><span class="numero-animado" data-target="2">0</span></div>
+          <div class="linha-numero"></div>
+          <div class="rotulo-numero">Frentes principais</div>
+          <div class="subtitulo-numero">Medicina preventiva e diagn&oacute;stico especializado</div>
         </div>
-      </div>
-
-      <div class="feature-row reverse">
-        <div class="feature-content reveal">
-          <div class="feature-number">02 - Exames e documentacao</div>
-          <h3 class="feature-title">Diagnostico, toxicologico e transito com orientacao</h3>
-          <p class="feature-desc">A Fortran Clinica do Transito e a Regis Juca Exame Toxicologico atendem demandas ligadas a condutores, avaliacao e exames obrigatorios.</p>
-          <div class="feature-checklist">
-            <div class="feature-check"><div class="check-icon">✓</div><span>Atendimento voltado para CNH</span></div>
-            <div class="feature-check"><div class="check-icon">✓</div><span>Exame toxicologico com orientacao</span></div>
-            <div class="feature-check"><div class="check-icon">✓</div><span>Informacoes claras sobre documentos e prazos</span></div>
-          </div>
+        <div class="cartao-numero revelar atraso-revelar-2">
+          <div class="icone-numero"><i data-lucide="users" aria-hidden="true"></i></div>
+          <div class="valor-numero"><span class="numero-animado" data-target="1">0</span></div>
+          <div class="linha-numero"></div>
+          <div class="rotulo-numero">Grupo integrado</div>
+          <div class="subtitulo-numero">Uma marca para organizar v&aacute;rias necessidades</div>
         </div>
-        <div class="feature-visual reveal reveal-delay-1">
-          <div class="feature-visual-inner">
-            <div class="fv-card">
-              <div class="fv-card-label">Atendimento ao condutor</div>
-              <div class="fv-list" style="margin-top:8px">
-                <div class="fv-list-item"><span class="fv-list-name">Fortran Clinica do Transito</span><span class="fv-pill green">CNH</span></div>
-                <div class="fv-list-item"><span class="fv-list-name">Regis Juca Exame Toxicologico</span><span class="fv-pill blue">Exame</span></div>
-                <div class="fv-list-item"><span class="fv-list-name">Documentacao orientada</span><span class="fv-pill dim">Etapas</span></div>
-              </div>
-            </div>
-            <div class="fv-row">
-              <div class="fv-card fv-wide">
-                <div class="fv-card-label">Objetivo</div>
-                <div class="fv-card-val">Agilidade</div>
-                <div class="fv-card-bar"><div class="fv-card-bar-fill" style="width:88%"></div></div>
-              </div>
-              <div class="fv-card">
-                <div class="fv-card-label">Unidades</div>
-                <div class="fv-card-val">4+</div>
-              </div>
-            </div>
-          </div>
+        <div class="cartao-numero revelar atraso-revelar-3">
+          <div class="icone-numero"><i data-lucide="heart" aria-hidden="true"></i></div>
+          <div class="valor-numero"><span class="numero-animado" data-target="100">0</span><span class="sufixo-numero">%</span></div>
+          <div class="linha-numero"></div>
+          <div class="rotulo-numero">Foco no atendimento</div>
+          <div class="subtitulo-numero">Informa&ccedil;&atilde;o clara e orienta&ccedil;&atilde;o ao cliente</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="stats-section" id="numeros">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-card reveal">
-          <div class="stat-rule"></div>
-          <div class="stat-value"><span class="stat-num" data-target="6">0</span></div>
-          <div class="stat-label">Marcas e unidades</div>
-          <div class="stat-sublabel">Clinica, laboratorio, transito e toxicologico</div>
-        </div>
-        <div class="stat-card reveal reveal-delay-1">
-          <div class="stat-rule"></div>
-          <div class="stat-value"><span class="stat-num" data-target="2">0</span></div>
-          <div class="stat-label">Frentes principais</div>
-          <div class="stat-sublabel">Medicina preventiva e diagnostico especializado</div>
-        </div>
-        <div class="stat-card reveal reveal-delay-2">
-          <div class="stat-rule"></div>
-          <div class="stat-value"><span class="stat-num" data-target="1">0</span></div>
-          <div class="stat-label">Grupo integrado</div>
-          <div class="stat-sublabel">Uma marca para organizar varias necessidades</div>
-        </div>
-        <div class="stat-card reveal reveal-delay-3">
-          <div class="stat-rule"></div>
-          <div class="stat-value"><span class="stat-num" data-target="100">0</span><span class="stat-suffix">%</span></div>
-          <div class="stat-label">Foco no atendimento</div>
-          <div class="stat-sublabel">Informacao clara e orientacao ao cliente</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="faq-section" id="faq">
-    <div class="container">
-      <div class="faq-inner">
-        <div class="faq-sidebar reveal">
-          <div class="section-label">Duvidas</div>
-          <h2 class="section-title">Perguntas <em>frequentes</em></h2>
-          <p class="section-sub">Respostas objetivas para pacientes, condutores e empresas parceiras que precisam de orientacao antes do atendimento.</p>
-          <button class="faq-toggle-all" id="faqToggleAll">
+  <!-- Duvidas frequentes -->
+  <section class="secao-duvidas" id="faq">
+    <div class="conteiner">
+      <div class="conteudo-duvidas">
+        <div class="lateral-duvidas revelar">
+          <div class="rotulo-secao">Duvidas</div>
+          <h2 class="titulo-secao">Perguntas <em>frequentes</em></h2>
+          <p class="subtitulo-secao">Respostas objetivas para pacientes, condutores e empresas parceiras que precisam de orientacao antes do atendimento.</p>
+          <button class="alternar-todas-duvidas" id="faqToggleAll">
             <span id="faqToggleIcon">+</span> Expandir tudo
           </button>
         </div>
-        <div class="faq-list reveal reveal-delay-1" id="faqList">
-          <div class="faq-item">
-            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+        <div class="lista-duvidas revelar atraso-revelar-1" id="faqList">
+          <div class="item-duvida">
+            <div class="pergunta-duvida" tabindex="0" role="button" aria-expanded="false">
               <span>Quais empresas fazem parte do Grupo Paula Pessoa?</span>
-              <div class="faq-icon">+</div>
+              <div class="icone-duvida">+</div>
             </div>
-            <div class="faq-answer"><div class="faq-answer-inner">O grupo reune marcas como Grupo Paula Pessoa, Clinica Carlos Ribeiro, Laboratorio Carlos Ribeiro, Fortran, Nortetran e Regis Juca.</div></div>
+            <div class="resposta-duvida"><div class="conteudo-resposta-duvida">O grupo reune marcas como Grupo Paula Pessoa, Clinica Carlos Ribeiro, Laboratorio Carlos Ribeiro, Fortran, Nortetran e Regis Juca.</div></div>
           </div>
-          <div class="faq-item">
-            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+          <div class="item-duvida">
+            <div class="pergunta-duvida" tabindex="0" role="button" aria-expanded="false">
               <span>O grupo atende somente area da saude?</span>
-              <div class="faq-icon">+</div>
+              <div class="icone-duvida">+</div>
             </div>
-            <div class="faq-answer"><div class="faq-answer-inner">Nao. O grupo atua em saude, exames laboratoriais, clinicas do motorista/transito e exame toxicologico.</div></div>
+            <div class="resposta-duvida"><div class="conteudo-resposta-duvida">Nao. O grupo atua em saude, exames laboratoriais, clinicas do motorista/transito e exame toxicologico.</div></div>
           </div>
-          <div class="faq-item">
-            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+          <div class="item-duvida">
+            <div class="pergunta-duvida" tabindex="0" role="button" aria-expanded="false">
               <span>Como faco para entrar em contato?</span>
-              <div class="faq-icon">+</div>
+              <div class="icone-duvida">+</div>
             </div>
-            <div class="faq-answer"><div class="faq-answer-inner">A secao de contato pode receber telefone, WhatsApp, endereco e email oficial da empresa. Esses dados podem ser adicionados assim que voce tiver as informacoes corretas.</div></div>
+            <div class="resposta-duvida"><div class="conteudo-resposta-duvida">A secao de contato pode receber telefone, WhatsApp, endereco e email oficial da empresa. Esses dados podem ser adicionados assim que voce tiver as informacoes corretas.</div></div>
           </div>
-          <div class="faq-item">
-            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+          <div class="item-duvida">
+            <div class="pergunta-duvida" tabindex="0" role="button" aria-expanded="false">
               <span>Posso trocar os textos depois?</span>
-              <div class="faq-icon">+</div>
+              <div class="icone-duvida">+</div>
             </div>
-            <div class="faq-answer"><div class="faq-answer-inner">Sim. A estrutura visual esta pronta, e os textos podem ser ajustados para refletir exatamente os servicos, horarios e enderecos de cada unidade.</div></div>
+            <div class="resposta-duvida"><div class="conteudo-resposta-duvida">Sim. A estrutura visual esta pronta, e os textos podem ser ajustados para refletir exatamente os servicos, horarios e enderecos de cada unidade.</div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="cta-section" id="contato">
-    <div class="container">
-      <div class="cta-inner reveal">
-        <div class="cta-content">
-          <div class="cta-label">Grupo Paula Pessoa</div>
-          <h2 class="cta-title">Precisa falar com uma <em>unidade?</em></h2>
-          <p class="cta-sub">Sua saude merece acompanhamento antes dos sintomas aparecerem. Use este espaco para destacar WhatsApp, telefone, email e endereco principal do grupo.</p>
+  <!-- Chamada final para agendamento -->
+  <section class="secao-chamada" id="contato">
+    <div class="conteiner">
+      <div class="interior-chamada revelar">
+        <div class="conteudo-chamada">
+          <div class="rotulo-chamada">Grupo Paula Pessoa</div>
+          <h2 class="titulo-chamada">Precisa falar com uma <em>unidade?</em></h2>
+          <p class="subtitulo-chamada">Sua saude merece acompanhamento antes dos sintomas aparecerem. Use este espaco para destacar WhatsApp, telefone, email e endereco principal do grupo.</p>
         </div>
-        <div class="cta-actions">
-          <a href="tel:+5500000000000" class="btn-cta-primary">Ligar agora</a>
-          <a href="mailto:contato@grupopaulapessoa.com.br" class="btn-cta-ghost">Enviar email</a>
+        <div class="acoes-chamada">
+          <a href="tel:+5500000000000" class="botao-chamada-principal">Ligar agora</a>
+          <a href="mailto:contato@grupopaulapessoa.com.br" class="botao-chamada-secundario">Enviar email</a>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="#" class="nav-logo nav-logo-image footer-logo" aria-label="Grupo Paula Pessoa">
+  <!-- Informacoes institucionais e links finais -->
+  <footer class="rodape">
+    <div class="conteiner">
+      <div class="grade-rodape">
+        <div class="marca-rodape">
+          <a href="#" class="logo-navegacao imagem-logo-navegacao logo-rodape" aria-label="Grupo Paula Pessoa">
             <img src="assets/logo-paula.png" alt="Grupo Paula Pessoa" />
           </a>
-          <p class="footer-brand-desc">Grupo empresarial com atuacao em saude, laboratorio, clinica do transito e exame toxicologico.</p>
+          <p class="descricao-marca-rodape">Grupo empresarial com atuacao em saude, laboratorio, clinica do transito e exame toxicologico.</p>
         </div>
         <div>
-          <div class="footer-col-label">Unidades</div>
-          <div class="footer-links">
+          <div class="rotulo-coluna-rodape">Unidades</div>
+          <div class="links-rodape">
             <a href="#empresas">Clinica Carlos Ribeiro</a>
             <a href="#empresas">Laboratorio Carlos Ribeiro</a>
             <a href="#empresas">Fortran</a>
@@ -479,8 +459,8 @@
           </div>
         </div>
         <div>
-          <div class="footer-col-label">Site</div>
-          <div class="footer-links">
+          <div class="rotulo-coluna-rodape">Site</div>
+          <div class="links-rodape">
             <a href="#servicos">Servicos</a>
             <a href="#sobre">Sobre</a>
             <a href="#faq">Duvidas</a>
@@ -488,17 +468,17 @@
           </div>
         </div>
         <div>
-          <div class="footer-col-label">Contato</div>
-          <div class="footer-links">
+          <div class="rotulo-coluna-rodape">Contato</div>
+          <div class="links-rodape">
             <a href="tel:+5500000000000">Telefone: adicionar</a>
             <a href="mailto:contato@grupopaulapessoa.com.br">Email: adicionar</a>
             <a href="#contato">Endereco: adicionar</a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <div class="footer-copy">© 2026 Grupo Paula Pessoa. Todos os direitos reservados.</div>
-        <div class="footer-legal">
+      <div class="rodape-inferior">
+        <div class="direitos-rodape">© 2026 Grupo Paula Pessoa. Todos os direitos reservados.</div>
+        <div class="legal-rodape">
           <a href="#">Privacidade</a>
           <a href="#">Termos</a>
         </div>
@@ -506,6 +486,7 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
   <script src="templatemo-622-clearwave.js"></script>
 </body>
 </html>

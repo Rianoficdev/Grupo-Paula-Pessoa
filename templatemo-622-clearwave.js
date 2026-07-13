@@ -1,10 +1,11 @@
 /*
 TemplateMo 622 Clearwave
 https://templatemo.com/tm-622-clearwave
-Free for personal and commercial use
-Adapted for Grupo Paula Pessoa.
+Uso livre para projetos pessoais e comerciais.
+Adaptado para o Grupo Paula Pessoa.
 */
 
+// Navegacao suave entre as secoes da pagina.
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', event => {
     const href = link.getAttribute('href');
@@ -23,29 +24,30 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-const nav = document.getElementById('mainNav');
-if (nav) {
+const navegacao = document.getElementById('mainNav');
+if (navegacao) {
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
+    navegacao.classList.toggle('rolada', window.scrollY > 40);
   }, { passive: true });
 }
 
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 
+// Fecha o menu mobile e devolve a rolagem para a pagina.
 function closeMobileMenu() {
   if (!hamburger || !mobileMenu) return;
-  hamburger.classList.remove('open');
-  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('aberto');
+  mobileMenu.classList.remove('aberto');
   hamburger.setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
 }
 
 if (hamburger && mobileMenu) {
   hamburger.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.contains('open');
-    hamburger.classList.toggle('open', !isOpen);
-    mobileMenu.classList.toggle('open', !isOpen);
+    const isOpen = mobileMenu.classList.contains('aberto');
+    hamburger.classList.toggle('aberto', !isOpen);
+    mobileMenu.classList.toggle('aberto', !isOpen);
     hamburger.setAttribute('aria-expanded', String(!isOpen));
     document.body.style.overflow = isOpen ? '' : 'hidden';
   });
@@ -59,6 +61,7 @@ if (hamburger && mobileMenu) {
   });
 }
 
+// Dados das unidades reais do Laboratorio Carlos Ribeiro.
 const laboratoryUnits = [
   { name: 'Aldeota', image: 'aldeota.png', address: 'Av. Bar\u00e3o de Studart, 1182 - Aldeota, Fortaleza - CE' },
   { name: 'Benfica', image: 'benfica.png', address: 'Av. Carapinima, 2415 - Benfica, Fortaleza - CE' },
@@ -73,24 +76,25 @@ const laboratoryUnits = [
 ];
 
 const laboratoryGrid = document.getElementById('unitsGrid');
-const laboratoryTemplate = laboratoryGrid ? laboratoryGrid.querySelector('.unit-card[data-unit="laboratorio"]') : null;
+const laboratoryTemplate = laboratoryGrid ? laboratoryGrid.querySelector('.cartao-unidade[data-unit="laboratorio"]') : null;
 
+// Monta os cartoes do laboratorio a partir de um unico modelo do HTML.
 if (laboratoryGrid && laboratoryTemplate) {
-  laboratoryGrid.querySelectorAll('.unit-card[data-unit="laboratorio"]').forEach(card => card.remove());
+  laboratoryGrid.querySelectorAll('.cartao-unidade[data-unit="laboratorio"]').forEach(card => card.remove());
 
   laboratoryUnits.forEach(unit => {
     const card = laboratoryTemplate.cloneNode(true);
-    const image = card.querySelector('.unit-image');
-    const title = card.querySelector('.unit-title-row h3');
-    const description = card.querySelector('.unit-description');
-    const demoLabel = card.querySelector('.unit-demo-label');
-    const services = card.querySelector('.unit-services');
+    const image = card.querySelector('.imagem-unidade');
+    const title = card.querySelector('.linha-titulo-unidade h3');
+    const description = card.querySelector('.descricao-unidade');
+    const demoLabel = card.querySelector('.rotulo-unidade-demonstrativa');
+    const services = card.querySelector('.servicos-unidade');
 
-    card.className = 'unit-card reveal';
+    card.className = 'cartao-unidade revelar';
     if (demoLabel) demoLabel.remove();
 
     if (image) {
-      image.className = 'unit-image unit-image-laboratory-location';
+      image.className = 'imagem-unidade imagem-local-laboratorio';
       image.style.backgroundImage = `url("assets/laboratorio-locations/${unit.image}")`;
       image.setAttribute('aria-label', `Fachada do Laboratorio Carlos Ribeiro ${unit.name}`);
     }
@@ -98,17 +102,17 @@ if (laboratoryGrid && laboratoryTemplate) {
     if (title) {
       title.textContent = 'Laboratorio Carlos Ribeiro';
       const locationName = document.createElement('span');
-      locationName.className = 'unit-location-name unit-location-name-lab';
+      locationName.className = 'nome-local-unidade nome-local-laboratorio';
       locationName.textContent = unit.name;
       title.appendChild(locationName);
     }
 
     if (description) {
-      description.className = 'unit-address';
+      description.className = 'endereco-unidade';
       description.textContent = unit.address;
 
       const contacts = document.createElement('div');
-      contacts.className = 'unit-contact-links';
+      contacts.className = 'contatos-unidade';
       contacts.innerHTML = '<a href="https://www.instagram.com/laboratoriocarlosribeiro" target="_blank" rel="noopener">@laboratoriocarlosribeiro</a><a href="https://wa.me/5585999617358" target="_blank" rel="noopener">(85) 99961-7358</a><a href="tel:08007777358">0800 777 7358</a>';
       description.insertAdjacentElement('afterend', contacts);
     }
@@ -121,6 +125,7 @@ if (laboratoryGrid && laboratoryTemplate) {
   });
 }
 
+// Completa os exemplos das empresas que ainda nao possuem dados definitivos.
 const exampleUnitsGrid = document.getElementById('unitsGrid');
 const exampleUnitNames = {
   transito: 'Fortran Clinica do Transito',
@@ -129,20 +134,20 @@ const exampleUnitNames = {
 
 if (exampleUnitsGrid) {
   Object.entries(exampleUnitNames).forEach(([unitType, unitName]) => {
-    const demoLabel = exampleUnitsGrid.querySelector(`.unit-card[data-unit="${unitType}"] .unit-demo-label`);
-    const demoCard = demoLabel ? demoLabel.closest('.unit-card') : null;
+    const demoLabel = exampleUnitsGrid.querySelector(`.cartao-unidade[data-unit="${unitType}"] .rotulo-unidade-demonstrativa`);
+    const demoCard = demoLabel ? demoLabel.closest('.cartao-unidade') : null;
     if (!demoCard) return;
 
     [3, 4].forEach(unitNumber => {
       const card = demoCard.cloneNode(true);
-      const title = card.querySelector('.unit-title-row h3');
-      const image = card.querySelector('.unit-image');
+      const title = card.querySelector('.linha-titulo-unidade h3');
+      const image = card.querySelector('.imagem-unidade');
 
       card.dataset.generatedExample = String(unitNumber);
       if (title) {
         title.textContent = unitName;
         const locationName = document.createElement('span');
-        locationName.className = 'unit-location-name';
+        locationName.className = 'nome-local-unidade';
         locationName.textContent = `Unidade 0${unitNumber}`;
         title.appendChild(locationName);
       }
@@ -152,12 +157,13 @@ if (exampleUnitsGrid) {
   });
 }
 
-const revealEls = document.querySelectorAll('.reveal');
+// Revela os elementos conforme eles entram na area visivel da tela.
+const revealEls = document.querySelectorAll('.revelar');
 if ('IntersectionObserver' in window) {
   const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add('visivel');
         revealObserver.unobserve(entry.target);
       }
     });
@@ -165,9 +171,10 @@ if ('IntersectionObserver' in window) {
 
   revealEls.forEach(el => revealObserver.observe(el));
 } else {
-  revealEls.forEach(el => el.classList.add('visible'));
+  revealEls.forEach(el => el.classList.add('visivel'));
 }
 
+// Anima os numeros institucionais sem saltos bruscos.
 function animateCounter(el) {
   const target = parseFloat(el.dataset.target);
   const decimal = el.dataset.decimal;
@@ -192,12 +199,12 @@ function animateCounter(el) {
   requestAnimationFrame(step);
 }
 
-const statsGrids = document.querySelectorAll('.stats-grid');
+const statsGrids = document.querySelectorAll('.grade-numeros');
 if ('IntersectionObserver' in window) {
   const statObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.querySelectorAll('.stat-num').forEach(animateCounter);
+        entry.target.querySelectorAll('.numero-animado').forEach(animateCounter);
         statObserver.unobserve(entry.target);
       }
     });
@@ -205,21 +212,22 @@ if ('IntersectionObserver' in window) {
 
   statsGrids.forEach(el => statObserver.observe(el));
 } else {
-  document.querySelectorAll('.stat-num').forEach(el => {
+  document.querySelectorAll('.numero-animado').forEach(el => {
     el.textContent = el.dataset.target;
   });
 }
 
-const faqItems = document.querySelectorAll('.faq-item');
+// Controla a abertura individual e coletiva das duvidas frequentes.
+const faqItems = document.querySelectorAll('.item-duvida');
 let allOpen = false;
 
 faqItems.forEach(item => {
-  const question = item.querySelector('.faq-question');
+  const question = item.querySelector('.pergunta-duvida');
   if (!question) return;
 
   const toggleFaq = () => {
-    const isOpen = item.classList.contains('open');
-    item.classList.toggle('open', !isOpen);
+    const isOpen = item.classList.contains('aberto');
+    item.classList.toggle('aberto', !isOpen);
     question.setAttribute('aria-expanded', String(!isOpen));
   };
 
@@ -240,8 +248,8 @@ if (faqToggleAllBtn) {
     allOpen = !allOpen;
 
     faqItems.forEach(item => {
-      const question = item.querySelector('.faq-question');
-      item.classList.toggle('open', allOpen);
+      const question = item.querySelector('.pergunta-duvida');
+      item.classList.toggle('aberto', allOpen);
       if (question) question.setAttribute('aria-expanded', String(allOpen));
     });
 
@@ -250,8 +258,9 @@ if (faqToggleAllBtn) {
   });
 }
 
+// Controla navegacao, filtros e animacoes do carrossel de unidades.
 const unitsGrid = document.getElementById('unitsGrid');
-const unitFilterButtons = document.querySelectorAll('.unit-filter-btn');
+const unitFilterButtons = document.querySelectorAll('.botao-filtro-unidade');
 const unitsPrev = document.getElementById('unitsPrev');
 const unitsNext = document.getElementById('unitsNext');
 
@@ -264,7 +273,7 @@ function updateUnitsCarouselButtons() {
 
 function getUnitsCarouselStep() {
   if (!unitsGrid) return 0;
-  const visibleCard = unitsGrid.querySelector('.unit-card:not([hidden])');
+  const visibleCard = unitsGrid.querySelector('.cartao-unidade:not([hidden])');
   const gap = parseFloat(getComputedStyle(unitsGrid).columnGap) || 0;
   return visibleCard ? visibleCard.getBoundingClientRect().width + gap : unitsGrid.clientWidth;
 }
@@ -286,30 +295,30 @@ if (unitsGrid && unitsPrev && unitsNext) {
 if (unitsGrid && unitFilterButtons.length) {
   unitFilterButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const clearFilter = button.classList.contains('active');
+      const clearFilter = button.classList.contains('ativo');
       const selectedUnit = clearFilter ? 'all' : button.dataset.unitFilter;
       let visibleCardIndex = 0;
 
-      unitsGrid.querySelectorAll('.unit-card').forEach(card => {
+      unitsGrid.querySelectorAll('.cartao-unidade').forEach(card => {
         const shouldShow = selectedUnit === 'all' || card.dataset.unit === selectedUnit;
         card.hidden = !shouldShow;
 
         if (shouldShow) {
-          card.classList.remove('unit-card-enter');
+          card.classList.remove('entrada-cartao-unidade');
           card.style.setProperty('--unit-enter-delay', `${visibleCardIndex * 110}ms`);
           void card.offsetWidth;
-          card.classList.add('unit-card-enter');
+          card.classList.add('entrada-cartao-unidade');
           card.addEventListener('animationend', () => {
-            card.classList.remove('unit-card-enter');
+            card.classList.remove('entrada-cartao-unidade');
           }, { once: true });
           visibleCardIndex += 1;
         }
       });
 
       unitFilterButtons.forEach(filterButton => {
-        const active = !clearFilter && filterButton === button;
-        filterButton.classList.toggle('active', active);
-        filterButton.setAttribute('aria-pressed', String(active));
+        const ativo = !clearFilter && filterButton === button;
+        filterButton.classList.toggle('ativo', ativo);
+        filterButton.setAttribute('aria-pressed', String(ativo));
       });
 
       unitsGrid.scrollTo({ left: 0, behavior: 'smooth' });
@@ -317,4 +326,8 @@ if (unitsGrid && unitFilterButtons.length) {
       setTimeout(updateUnitsCarouselButtons, 450);
     });
   });
+}
+
+if (window.lucide) {
+  window.lucide.createIcons();
 }
