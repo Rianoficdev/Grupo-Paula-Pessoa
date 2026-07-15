@@ -869,7 +869,7 @@ Adaptado para o Grupo Paula Pessoa.
     }
     .cartao-area:hover { transform: translateY(-7px); box-shadow: 0 22px 46px rgba(22,50,79,0.14); }
     .area-diagnostico { --area-color: #16a99e; }
-    .area-transito { --area-color: #7040a0; }
+    .area-transito { --area-color: #d5a20b; }
     .area-toxicologia { --area-color: #1769e8; }
     .icone-area {
       width: 112px;
