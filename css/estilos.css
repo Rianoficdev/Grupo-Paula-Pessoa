@@ -982,6 +982,9 @@ Adaptado para o Grupo Paula Pessoa.
     }
     .cartao-numero {
       --cor-numero: #1769e8;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
       position: relative;
       min-height: 390px;
       padding: 34px 32px 38px;
@@ -990,6 +993,7 @@ Adaptado para o Grupo Paula Pessoa.
       border-radius: 8px;
       background: rgba(255,255,255,0.96);
       box-shadow: 0 14px 36px rgba(22,50,79,0.08);
+      text-align: center;
       transition: transform 0.35s var(--silk), box-shadow 0.35s var(--silk);
     }
     .cartao-numero:nth-child(3) { --cor-numero: #16a99e; }
@@ -1023,6 +1027,7 @@ Adaptado para o Grupo Paula Pessoa.
     .valor-numero {
       display: flex;
       align-items: baseline;
+      justify-content: center;
       gap: 3px;
       margin-bottom: 20px;
       color: #071947;
