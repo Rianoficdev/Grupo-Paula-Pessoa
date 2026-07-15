@@ -872,16 +872,20 @@ Adaptado para o Grupo Paula Pessoa.
     .area-transito { --area-color: #7040a0; }
     .area-toxicologia { --area-color: #1769e8; }
     .icone-area {
-      display: grid;
-      place-items: center;
-      width: 96px;
-      height: 96px;
+      width: 112px;
+      height: 112px;
       margin-bottom: 23px;
       border-radius: 50%;
-      background: color-mix(in srgb, var(--area-color) 9%, white);
-      color: var(--area-color);
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(22,50,79,0.14);
     }
-    .icone-area svg { width: 53px; height: 53px; stroke-width: 1.7; }
+    .icone-area img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     .cartao-area h3 {
       margin: 0;
       color: #101c38;
@@ -2149,8 +2153,7 @@ Adaptado para o Grupo Paula Pessoa.
       .cabecalho-areas p { font-size: 1rem; }
       .grade-areas { grid-template-columns: 1fr; }
       .cartao-area { min-height: 330px; padding: 30px 22px 25px; }
-      .icone-area { width: 84px; height: 84px; margin-bottom: 20px; }
-      .icone-area svg { width: 46px; height: 46px; }
+      .icone-area { width: 100px; height: 100px; margin-bottom: 20px; }
       .chamada-areas { width: 100%; padding: 0 18px; }
       .chamada-areas span { margin-left: auto; }
       .conteiner { padding: 0 20px; }
