@@ -868,9 +868,9 @@ Adaptado para o Grupo Paula Pessoa.
       transition: transform 0.3s var(--silk), box-shadow 0.3s var(--silk);
     }
     .cartao-area:hover { transform: translateY(-7px); box-shadow: 0 22px 46px rgba(22,50,79,0.14); }
-    .area-diagnostico { --area-color: #16a99e; }
+    .area-diagnostico { --area-color: #7040a0; }
     .area-transito { --area-color: #d5a20b; }
-    .area-toxicologia { --area-color: #1769e8; }
+    .area-toxicologia { --area-color: #16a99e; }
     .icone-area {
       width: 112px;
       height: 112px;
