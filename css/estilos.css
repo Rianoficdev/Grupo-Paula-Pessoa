@@ -1187,7 +1187,7 @@ Adaptado para o Grupo Paula Pessoa.
         border: 0;
         background-color: #f8fbff;
         background-image:
-          url('../assets/banners/fundo-indicadores.png'),
+          url('../assets/banners/areas-de-atuacao.svg'),
           radial-gradient(circle at 8% 8%, rgba(23,105,232,0.08), transparent 25%),
           linear-gradient(180deg, #f9fcff 0%, #f4f9ff 58%, #e9f5ff 100%);
         background-position: center;
@@ -1224,18 +1224,19 @@ Adaptado para o Grupo Paula Pessoa.
       }
       .secao-numeros-com-imagem .grade-numeros {
         position: absolute;
-        inset: 44% 6.3% 11% 6.3%;
+        inset: 50.5% 8.4% 31.5%;
         align-items: stretch;
         gap: 0;
         padding: 0;
       }
       .secao-numeros-com-imagem .cartao-numero {
         min-height: 0;
-        padding: clamp(54px, 7vw, 108px) clamp(12px, 2vw, 30px) clamp(22px, 3vw, 46px);
+        padding: clamp(7px, 1vw, 16px) clamp(18px, 2.2vw, 34px) 6px;
         border: 0;
         border-radius: 0;
         background: transparent;
         box-shadow: none;
+        transform: none;
       }
       .secao-numeros-com-imagem .cartao-numero::before,
       .secao-numeros-com-imagem .cartao-numero::after,
@@ -1244,22 +1245,24 @@ Adaptado para o Grupo Paula Pessoa.
       }
       .secao-numeros-com-imagem .cartao-numero:hover {
         box-shadow: none;
+        transform: none;
       }
       .secao-numeros-com-imagem .valor-numero {
-        margin-bottom: clamp(10px, 1.3vw, 20px);
-        font-size: clamp(2.6rem, 5vw, 5.2rem);
+        margin-bottom: clamp(4px, 0.6vw, 9px);
+        font-size: clamp(1.8rem, 3.6vw, 3.7rem);
       }
       .secao-numeros-com-imagem .linha-numero {
-        margin-bottom: clamp(12px, 1.5vw, 24px);
+        width: clamp(24px, 2.6vw, 40px);
+        margin-bottom: clamp(5px, 0.7vw, 10px);
       }
       .secao-numeros-com-imagem .rotulo-numero {
-        margin-bottom: clamp(7px, 0.9vw, 13px);
-        font-size: clamp(0.8rem, 1.35vw, 1.12rem);
+        margin-bottom: clamp(3px, 0.45vw, 7px);
+        font-size: clamp(0.65rem, 1.05vw, 0.95rem);
       }
       .secao-numeros-com-imagem .subtitulo-numero {
-        max-width: 250px;
-        font-size: clamp(0.68rem, 1.05vw, 0.94rem);
-        line-height: 1.55;
+        max-width: 220px;
+        font-size: clamp(0.52rem, 0.78vw, 0.72rem);
+        line-height: 1.35;
       }
     }
 
