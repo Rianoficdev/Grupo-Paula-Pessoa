@@ -1118,7 +1118,14 @@ Adaptado para o Grupo Paula Pessoa.
         aspect-ratio: 3 / 2;
         padding: 0;
         border: 0;
-        background: url('../assets/banners/fundo-indicadores.png') center / cover no-repeat;
+        background-color: #f8fbff;
+        background-image:
+          url('../assets/banners/fundo-indicadores.png'),
+          radial-gradient(circle at 8% 8%, rgba(23,105,232,0.08), transparent 25%),
+          linear-gradient(180deg, #f9fcff 0%, #f4f9ff 58%, #e9f5ff 100%);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
       }
       .secao-numeros-com-imagem::before { display: none; }
       .secao-numeros-com-imagem > .conteiner {
@@ -1129,13 +1136,24 @@ Adaptado para o Grupo Paula Pessoa.
       }
       .secao-numeros-com-imagem .cabecalho-numeros {
         position: absolute;
-        width: 1px;
-        height: 1px;
-        margin: -1px;
+        top: 4.5%;
+        left: 50%;
+        width: min(92%, 900px);
+        max-width: 900px;
+        height: auto;
+        margin: 0;
         padding: 0;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        transform: translateX(-50%);
+      }
+      .secao-numeros-com-imagem .cabecalho-numeros h2 {
+        font-size: clamp(2.2rem, 5vw, 4.8rem);
+      }
+      .secao-numeros-com-imagem .cabecalho-numeros p {
+        margin-top: clamp(10px, 1.5vw, 24px);
+        font-size: clamp(0.78rem, 1.35vw, 1.15rem);
       }
       .secao-numeros-com-imagem .grade-numeros {
         position: absolute;
