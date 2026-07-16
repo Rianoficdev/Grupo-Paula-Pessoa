@@ -1233,7 +1233,7 @@ Adaptado para o Grupo Paula Pessoa.
         top: 50.5%;
         width: 18.5%;
         height: 17.5%;
-        justify-content: center;
+        display: block;
         min-height: 0;
         padding: 0 clamp(16px, 1.8vw, 28px);
         border: 0;
@@ -1256,30 +1256,47 @@ Adaptado para o Grupo Paula Pessoa.
         transform: translateX(-50%);
       }
       .secao-numeros-com-imagem .valor-numero {
+        position: absolute;
+        top: 4%;
+        left: 0;
         width: 100%;
-        margin-bottom: clamp(2px, 0.35vw, 6px);
+        height: 34%;
+        margin: 0;
         font-size: clamp(1.7rem, 3.25vw, 3.4rem);
+        line-height: 1;
         text-align: center;
       }
       .secao-numeros-com-imagem .linha-numero {
+        position: absolute;
+        top: 40%;
+        left: 50%;
         width: clamp(24px, 2.6vw, 40px);
-        margin-bottom: clamp(3px, 0.45vw, 7px);
+        margin: 0;
+        transform: translateX(-50%);
       }
       .secao-numeros-com-imagem .rotulo-numero {
+        position: absolute;
+        top: 51%;
+        left: 50%;
         width: 100%;
         max-width: 190px;
-        margin-bottom: clamp(2px, 0.3vw, 5px);
+        margin: 0;
         font-size: clamp(0.62rem, 0.95vw, 0.88rem);
         overflow-wrap: anywhere;
         text-align: center;
+        transform: translateX(-50%);
       }
       .secao-numeros-com-imagem .subtitulo-numero {
+        position: absolute;
+        top: 69%;
+        left: 50%;
         width: 100%;
         max-width: 170px;
         font-size: clamp(0.5rem, 0.68vw, 0.66rem);
         line-height: 1.3;
         overflow-wrap: anywhere;
         text-align: center;
+        transform: translateX(-50%);
       }
     }
 
