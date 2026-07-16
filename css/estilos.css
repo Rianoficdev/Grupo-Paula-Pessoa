@@ -1111,6 +1111,73 @@ Adaptado para o Grupo Paula Pessoa.
       line-height: 1.65;
     }
 
+    /* Arte completa dos indicadores com os dados posicionados sobre os cartoes. */
+    @media (min-width: 769px) {
+      .secao-numeros-com-imagem {
+        min-height: 0;
+        aspect-ratio: 3 / 2;
+        padding: 0;
+        border: 0;
+        background: url('../assets/banners/fundo-indicadores.png') center / cover no-repeat;
+      }
+      .secao-numeros-com-imagem::before { display: none; }
+      .secao-numeros-com-imagem > .conteiner {
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        padding: 0;
+      }
+      .secao-numeros-com-imagem .cabecalho-numeros {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+      }
+      .secao-numeros-com-imagem .grade-numeros {
+        position: absolute;
+        inset: 44% 6.3% 11% 6.3%;
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
+      }
+      .secao-numeros-com-imagem .cartao-numero {
+        min-height: 0;
+        padding: clamp(54px, 7vw, 108px) clamp(12px, 2vw, 30px) clamp(22px, 3vw, 46px);
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+      .secao-numeros-com-imagem .cartao-numero::before,
+      .secao-numeros-com-imagem .cartao-numero::after,
+      .secao-numeros-com-imagem .icone-numero {
+        display: none;
+      }
+      .secao-numeros-com-imagem .cartao-numero:hover {
+        box-shadow: none;
+      }
+      .secao-numeros-com-imagem .valor-numero {
+        margin-bottom: clamp(10px, 1.3vw, 20px);
+        font-size: clamp(2.6rem, 5vw, 5.2rem);
+      }
+      .secao-numeros-com-imagem .linha-numero {
+        margin-bottom: clamp(12px, 1.5vw, 24px);
+      }
+      .secao-numeros-com-imagem .rotulo-numero {
+        margin-bottom: clamp(7px, 0.9vw, 13px);
+        font-size: clamp(0.8rem, 1.35vw, 1.12rem);
+      }
+      .secao-numeros-com-imagem .subtitulo-numero {
+        max-width: 250px;
+        font-size: clamp(0.68rem, 1.05vw, 0.94rem);
+        line-height: 1.55;
+      }
+    }
+
     /* ══════════════════════════════════════════
        7. EMPRESAS E UNIDADES
     ══════════════════════════════════════════ */
