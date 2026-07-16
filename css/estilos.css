@@ -1266,6 +1266,9 @@ Adaptado para o Grupo Paula Pessoa.
         line-height: 1;
         text-align: center;
       }
+      .secao-numeros-com-imagem .cartao-numero:nth-child(4) .valor-numero {
+        left: 3%;
+      }
       .secao-numeros-com-imagem .linha-numero {
         position: absolute;
         top: 40%;
