@@ -2261,6 +2261,8 @@ Adaptado para o Grupo Paula Pessoa.
     .item-duvida:nth-child(2) { --faq-color: #7040a0; }
     .item-duvida:nth-child(3) { --faq-color: #159b5b; }
     .item-duvida:nth-child(4) { --faq-color: #c99700; }
+    .item-duvida:nth-child(5) { --faq-color: #08a8cc; }
+    .item-duvida:nth-child(6) { --faq-color: #7040a0; }
     .item-duvida:first-child { border-top: 1px solid var(--faq-color); }
     .item-duvida:hover,
     .item-duvida.aberto {
