@@ -931,21 +931,39 @@ Adaptado para o Grupo Paula Pessoa.
        6. NUMEROS DO GRUPO
     ══════════════════════════════════════════ */
     .secao-numeros {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
       padding: 104px 0 110px;
       border-top: 1px solid var(--border);
-      background: #f8fbff;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(23,105,232,0.08), transparent 25%),
+        radial-gradient(circle at 93% 88%, rgba(22,169,158,0.16), transparent 30%),
+        linear-gradient(180deg, #f9fcff 0%, #f4f9ff 58%, #e9f5ff 100%);
     }
-    .secao-numeros > .conteiner { max-width: 1280px; }
+    .secao-numeros::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      right: -14%;
+      bottom: -42%;
+      left: -12%;
+      height: 62%;
+      border-radius: 50% 50% 0 0 / 35% 35% 0 0;
+      background: linear-gradient(115deg, rgba(23,105,232,0.72), rgba(25,151,222,0.78) 42%, rgba(16,190,151,0.82));
+      transform: rotate(-2deg);
+    }
+    .secao-numeros > .conteiner { position: relative; z-index: 1; max-width: 1380px; }
     .cabecalho-numeros {
       max-width: 900px;
       margin: 0 auto 52px;
       text-align: center;
     }
     .rotulo-numeros {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      flex-direction: column;
-      gap: 15px;
+      justify-content: center;
+      gap: 18px;
       margin-bottom: 24px;
       color: #0a4ca5;
       font-size: 0.85rem;
@@ -953,12 +971,14 @@ Adaptado para o Grupo Paula Pessoa.
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
+    .rotulo-numeros::before,
     .rotulo-numeros::after {
       content: '';
       width: 38px;
       height: 2px;
       background: #1769e8;
     }
+    .rotulo-numeros::after { background: #16a99e; }
     .cabecalho-numeros h2 {
       margin: 0;
       color: #101c38;
@@ -967,6 +987,14 @@ Adaptado para o Grupo Paula Pessoa.
       font-weight: 700;
       line-height: 1.12;
       letter-spacing: 0;
+    }
+    .cabecalho-numeros h2 em {
+      display: block;
+      font-style: normal;
+      background: linear-gradient(90deg, #175ce5 16%, #178ed0 52%, #10a977 84%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .cabecalho-numeros p {
       margin: 24px auto 0;
@@ -978,50 +1006,72 @@ Adaptado para o Grupo Paula Pessoa.
     .grade-numeros {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 24px;
+      align-items: end;
+      gap: 30px;
+      padding: 62px 22px 24px;
     }
     .cartao-numero {
       --cor-numero: #1769e8;
+      --cor-numero-clara: #42a2ff;
       display: flex;
       align-items: center;
       flex-direction: column;
       position: relative;
+      isolation: isolate;
       min-height: 390px;
-      padding: 34px 32px 38px;
-      overflow: hidden;
-      border: 1px solid #dce5ef;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.96);
-      box-shadow: 0 14px 36px rgba(22,50,79,0.08);
+      padding: 92px 28px 44px;
+      border: 1px solid rgba(190,207,228,0.75);
+      border-radius: 30px;
+      background: rgba(255,255,255,0.97);
+      box-shadow: 0 22px 50px rgba(22,50,79,0.15);
       text-align: center;
       transition: transform 0.35s var(--silk), box-shadow 0.35s var(--silk);
     }
-    .cartao-numero:nth-child(3) { --cor-numero: #16a99e; }
-    .cartao-numero:nth-child(4) { --cor-numero: #7040a0; }
+    .cartao-numero:nth-child(1) { transform: rotate(2.5deg); }
+    .cartao-numero:nth-child(2) { --cor-numero: #168ee5; --cor-numero-clara: #31b9ed; transform: rotate(-2deg); }
+    .cartao-numero:nth-child(3) { --cor-numero: #0b9c80; --cor-numero-clara: #28c8aa; transform: rotate(2deg); }
+    .cartao-numero:nth-child(4) { --cor-numero: #7040a0; --cor-numero-clara: #a46ae8; transform: rotate(-2.5deg); }
+    .cartao-numero::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      inset: 16px -12px -14px 14px;
+      border-radius: 34px;
+      background: linear-gradient(145deg, var(--cor-numero-clara), var(--cor-numero));
+      transform: rotate(-5deg);
+      box-shadow: 0 20px 36px color-mix(in srgb, var(--cor-numero) 24%, transparent);
+    }
     .cartao-numero::after {
       content: '';
       position: absolute;
-      right: -10%;
-      bottom: -32px;
-      left: -10%;
-      height: 44px;
-      border-top: 2px solid var(--cor-numero);
-      border-radius: 50% 50% 0 0;
-      opacity: 0.8;
+      right: 52px;
+      bottom: 25px;
+      width: 78px;
+      height: 34px;
+      opacity: 0.65;
+      background-image: radial-gradient(circle, var(--cor-numero) 1.5px, transparent 1.8px);
+      background-size: 12px 12px;
     }
     .cartao-numero:hover {
-      transform: translateY(-7px);
+      transform: translateY(-10px) rotate(0);
       box-shadow: 0 22px 48px rgba(22,50,79,0.14);
     }
     .icone-numero {
       display: grid;
       place-items: center;
-      width: 82px;
-      height: 82px;
-      margin-bottom: 28px;
+      position: absolute;
+      top: -48px;
+      left: 50%;
+      z-index: 2;
+      width: 100px;
+      height: 100px;
+      margin: 0;
       border-radius: 50%;
-      background: color-mix(in srgb, var(--cor-numero) 9%, white);
-      color: var(--cor-numero);
+      border: 7px solid rgba(255,255,255,0.9);
+      background: linear-gradient(145deg, var(--cor-numero-clara), var(--cor-numero));
+      box-shadow: 0 14px 25px color-mix(in srgb, var(--cor-numero) 30%, transparent);
+      color: #fff;
+      transform: translateX(-50%);
     }
     .icone-numero svg { width: 43px; height: 43px; stroke-width: 1.7; }
     .valor-numero {
@@ -1030,7 +1080,7 @@ Adaptado para o Grupo Paula Pessoa.
       justify-content: center;
       gap: 3px;
       margin-bottom: 20px;
-      color: #071947;
+      color: var(--cor-numero);
       font-family: 'Montserrat', sans-serif;
       font-size: clamp(3.8rem, 5vw, 5.4rem);
       font-weight: 700;
@@ -1046,7 +1096,7 @@ Adaptado para o Grupo Paula Pessoa.
       transition: width 0.5s var(--silk);
     }
     .cartao-numero:hover .linha-numero { width: 62px; }
-    .sufixo-numero { color: #071947; font-size: 48%; font-weight: 700; }
+    .sufixo-numero { color: var(--cor-numero); font-size: 48%; font-weight: 700; }
     .rotulo-numero {
       margin-bottom: 13px;
       color: #101c38;
