@@ -2223,37 +2223,69 @@ Adaptado para o Grupo Paula Pessoa.
     /* ══════════════════════════════════════════
        10. DUVIDAS FREQUENTES
     ══════════════════════════════════════════ */
-    .secao-duvidas { padding: 100px 0; }
-    .conteudo-duvidas { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
-    .lateral-duvidas { position: sticky; top: 100px; }
-    .lateral-duvidas .subtitulo-secao { margin-top: 16px; margin-bottom: 32px; }
+    .secao-duvidas { padding: 100px 0; background: #fff; }
+    .secao-duvidas > .conteiner { max-width: 1280px; }
+    .conteudo-duvidas { display: block; }
+    .lateral-duvidas {
+      position: static;
+      max-width: 820px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+    .lateral-duvidas .rotulo-secao { margin: 0 auto 14px; }
+    .lateral-duvidas .titulo-secao {
+      margin: 0;
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      text-transform: uppercase;
+    }
+    .lateral-duvidas .subtitulo-secao { margin: 16px auto 0; text-align: center; }
     .alternar-todas-duvidas {
-      font-size: 0.875rem; font-weight: 600; color: var(--accent);
-      display: flex; align-items: center; gap: 6px;
-      transition: opacity 0.3s;
+      display: none;
     }
     .alternar-todas-duvidas:hover { opacity: 0.75; }
 
-    .lista-duvidas { display: flex; flex-direction: column; gap: 0; }
-    .item-duvida {
-      border-bottom: 1px solid var(--border);
+    .lista-duvidas {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+      gap: 18px 22px;
     }
-    .item-duvida:first-child { border-top: 1px solid var(--border); }
+    .item-duvida {
+      overflow: hidden;
+      border: 1px solid #159b5b;
+      background: #fff;
+      transition: box-shadow 0.25s, border-color 0.25s;
+    }
+    .item-duvida:first-child { border-top: 1px solid #159b5b; }
+    .item-duvida:hover,
+    .item-duvida.aberto {
+      border-color: #087a45;
+      box-shadow: 0 8px 22px rgba(8,122,69,0.1);
+    }
     .pergunta-duvida {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 22px 0; cursor: pointer; gap: 16px;
-      font-size: 0.9375rem; font-weight: 600; color: var(--text-1);
+      min-height: 68px;
+      padding: 14px 16px 14px 20px; cursor: pointer; gap: 18px;
+      font-size: 0.92rem; font-weight: 600; color: #172033;
       transition: color 0.3s;
     }
-    .pergunta-duvida:hover { color: var(--accent); }
+    .pergunta-duvida:hover { color: #087a45; }
     .icone-duvida {
-      width: 28px; height: 28px; border-radius: 50%;
-      border: 1.5px solid var(--accent-border); flex-shrink: 0;
+      width: 30px; height: 30px; border-radius: 0;
+      border: 1px solid #159b5b; flex-shrink: 0;
       display: flex; align-items: center; justify-content: center;
-      color: var(--accent); font-size: 16px; font-weight: 300;
+      background: #159b5b;
+      color: transparent; font-size: 0; font-weight: 600;
       transition: transform 0.5s var(--silk), background 0.4s, color 0.4s;
     }
-    .item-duvida.aberto .icone-duvida { transform: rotate(45deg); background: var(--accent); color: #fff; border-color: var(--accent); }
+    .icone-duvida::before {
+      content: '\2304';
+      color: #fff;
+      font-size: 17px;
+      line-height: 1;
+      transform: translateY(-2px);
+    }
+    .item-duvida.aberto .icone-duvida { transform: rotate(180deg); background: #087a45; color: #fff; border-color: #087a45; }
     .resposta-duvida {
       display: grid; grid-template-rows: 0fr;
       transition: grid-template-rows 0.5s var(--silk);
@@ -2262,10 +2294,10 @@ Adaptado para o Grupo Paula Pessoa.
     .conteudo-resposta-duvida {
       overflow: hidden;
       font-size: 0.9rem; line-height: 1.75; color: var(--text-2);
-      padding-bottom: 0;
-      transition: padding-bottom 0.5s var(--silk);
+      padding: 0 20px;
+      transition: padding 0.5s var(--silk);
     }
-    .item-duvida.aberto .conteudo-resposta-duvida { padding-bottom: 20px; }
+    .item-duvida.aberto .conteudo-resposta-duvida { padding: 0 20px 20px; }
 
     /* ══════════════════════════════════════════
        11. CHAMADA PARA ATENDIMENTO
@@ -2404,6 +2436,9 @@ Adaptado para o Grupo Paula Pessoa.
       .chamada-areas { width: 100%; padding: 0 18px; }
       .chamada-areas span { margin-left: auto; }
       .conteiner { padding: 0 20px; }
+      .lista-duvidas { grid-template-columns: 1fr; gap: 14px; }
+      .lateral-duvidas { margin-bottom: 34px; }
+      .pergunta-duvida { min-height: 64px; padding: 13px 13px 13px 16px; }
       .links-navegacao, .acoes-navegacao { display: none; }
       .botao-menu-mobile { display: flex; }
       .testimonials-grid { grid-template-columns: 1fr; }
