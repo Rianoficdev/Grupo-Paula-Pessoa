@@ -2279,11 +2279,12 @@ Adaptado para o Grupo Paula Pessoa.
       transition: transform 0.5s var(--silk), background 0.4s, color 0.4s;
     }
     .icone-duvida::before {
-      content: '\2304';
-      color: #fff;
-      font-size: 17px;
-      line-height: 1;
-      transform: translateY(-2px);
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: translateY(-2px) rotate(45deg);
     }
     .item-duvida.aberto .icone-duvida { transform: rotate(180deg); background: #087a45; color: #fff; border-color: #087a45; }
     .resposta-duvida {
