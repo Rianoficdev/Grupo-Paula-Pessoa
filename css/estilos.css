@@ -927,6 +927,73 @@ Adaptado para o Grupo Paula Pessoa.
     .chamada-areas:hover { background: #087bea; color: #fff; }
     .chamada-areas:hover svg { color: #fff; }
 
+    /* Arte SVG da secao de areas com o conteudo sobre os quatro cartoes. */
+    @media (min-width: 769px) {
+      .secao-areas-com-imagem {
+        position: relative;
+        min-height: 0;
+        aspect-ratio: 3 / 2;
+        padding: 0;
+        overflow: hidden;
+        border: 0;
+        background: #fff url('../assets/banners/areas-de-atuacao.svg') center / cover no-repeat;
+      }
+      .secao-areas-com-imagem .conteiner-areas {
+        position: relative;
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        padding: 0;
+      }
+      .secao-areas-com-imagem .cabecalho-areas {
+        position: absolute;
+        top: 4.5%;
+        left: 50%;
+        width: min(92%, 900px);
+        margin: 0;
+        transform: translateX(-50%);
+      }
+      .secao-areas-com-imagem .cabecalho-areas h2 {
+        font-size: clamp(2.4rem, 5vw, 5rem);
+      }
+      .secao-areas-com-imagem .cabecalho-areas p {
+        font-size: clamp(0.78rem, 1.25vw, 1.15rem);
+      }
+      .secao-areas-com-imagem .grade-areas {
+        position: absolute;
+        inset: 50.5% 8.4% 31.5%;
+        align-items: stretch;
+        gap: 0;
+      }
+      .secao-areas-com-imagem .cartao-area {
+        min-height: 0;
+        padding: clamp(12px, 1.5vw, 24px) clamp(18px, 2.2vw, 34px) 8px;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+      .secao-areas-com-imagem .cartao-area:hover {
+        transform: none;
+        box-shadow: none;
+      }
+      .secao-areas-com-imagem .icone-area { display: none; }
+      .secao-areas-com-imagem .cartao-area h3 {
+        font-size: clamp(0.85rem, 1.35vw, 1.3rem);
+      }
+      .secao-areas-com-imagem .cartao-area p {
+        margin: clamp(5px, 0.7vw, 10px) 0;
+        font-size: clamp(0.58rem, 0.85vw, 0.78rem);
+        line-height: 1.4;
+      }
+      .secao-areas-com-imagem .cartao-area a {
+        gap: 8px;
+        font-size: clamp(0.62rem, 0.85vw, 0.78rem);
+      }
+      .secao-areas-com-imagem .cartao-area a span { font-size: 1rem; }
+      .secao-areas-com-imagem .chamada-areas { display: none; }
+    }
+
     /* ══════════════════════════════════════════
        6. NUMEROS DO GRUPO
     ══════════════════════════════════════════ */
