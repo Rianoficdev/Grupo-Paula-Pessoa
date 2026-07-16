@@ -1230,8 +1230,9 @@ Adaptado para o Grupo Paula Pessoa.
         padding: 0;
       }
       .secao-numeros-com-imagem .cartao-numero {
+        justify-content: center;
         min-height: 0;
-        padding: clamp(7px, 1vw, 16px) clamp(18px, 2.2vw, 34px) 6px;
+        padding: clamp(12px, 1.4vw, 22px) clamp(34px, 3.4vw, 52px) 5px;
         border: 0;
         border-radius: 0;
         background: transparent;
@@ -1248,21 +1249,30 @@ Adaptado para o Grupo Paula Pessoa.
         transform: none;
       }
       .secao-numeros-com-imagem .valor-numero {
+        width: 100%;
         margin-bottom: clamp(4px, 0.6vw, 9px);
         font-size: clamp(1.8rem, 3.6vw, 3.7rem);
+        text-align: center;
       }
       .secao-numeros-com-imagem .linha-numero {
         width: clamp(24px, 2.6vw, 40px);
         margin-bottom: clamp(5px, 0.7vw, 10px);
       }
       .secao-numeros-com-imagem .rotulo-numero {
+        width: 100%;
+        max-width: 205px;
         margin-bottom: clamp(3px, 0.45vw, 7px);
         font-size: clamp(0.65rem, 1.05vw, 0.95rem);
+        overflow-wrap: anywhere;
+        text-align: center;
       }
       .secao-numeros-com-imagem .subtitulo-numero {
-        max-width: 220px;
+        width: 100%;
+        max-width: 185px;
         font-size: clamp(0.52rem, 0.78vw, 0.72rem);
         line-height: 1.35;
+        overflow-wrap: anywhere;
+        text-align: center;
       }
     }
 
