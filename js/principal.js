@@ -63,16 +63,19 @@ if (hamburger && mobileMenu) {
 
 // Dados das unidades reais do Laboratório Carlos Ribeiro.
 const laboratoryUnits = [
-  { name: 'Aldeota', image: 'aldeota.png', address: 'Av. Bar\u00e3o de Studart, 1182 - Aldeota, Fortaleza - CE' },
-  { name: 'Benfica', image: 'benfica.png', address: 'Av. Carapinima, 2415 - Benfica, Fortaleza - CE' },
-  { name: 'Cidade 2000', image: 'cidade-2000.png', address: 'Alameda Nadja, 46 A - Quadra 8, Fortaleza - CE' },
-  { name: 'Cidade dos Funcion\u00e1rios', image: 'cidade-dos-funcionarios.png', address: 'Av. Oliveira Paiva, 1292 - Cidade dos Funcion\u00e1rios, Fortaleza - CE' },
-  { name: 'Messejana - Giga Mall', image: 'giga-mall.png', address: 'R. Jos\u00e9 Hip\u00f3lito, 264 - Messejana, Fortaleza - CE' },
-  { name: 'Iand\u00ea', image: 'iande.png', address: 'Av. Edson da Mota Correia, 620 - Centro, Caucaia - CE, ao lado da Smart Fit' },
-  { name: 'North Shopping', image: 'north-shopping.png', address: 'Av. Bezerra de Menezes, 2450 - Presidente Kennedy, Fortaleza - CE - Piso L3, ao lado do Detran' },
-  { name: 'Parquel\u00e2ndia', image: 'parquelandia.png', address: 'Rua Gustavo Sampaio, 1273 - Parquel\u00e2ndia, Fortaleza - CE' },
-  { name: 'Rio Mar Fortaleza', image: 'rio-mar-fortaleza.png', address: 'Av. Desembargador Lauro Nogueira - RioMar Fortaleza, Fortaleza - CE' },
-  { name: 'Rio Mar Kennedy', image: 'rio-mar-kennedy.png', address: 'Av. Sargento Herm\u00ednio Sampaio, 3100 - Presidente Kennedy, Fortaleza - CE' }
+  { name: 'Benfica', image: 'benfica.png', address: 'Av. Carapinima, 2415 A - Benfica, Fortaleza - CE, 60020-290' },
+  { name: 'Cidade 2000', image: 'cidade-2000.png', address: 'Alameda Nadja, 46 A - Quadra 8 - Cidade 2000, Fortaleza - CE, 60190-230' },
+  { name: 'Cidade dos Funcionários', image: 'cidade-dos-funcionarios.png', address: 'Av. Oliveira Paiva, 1291 - Cidade dos Funcionários, Fortaleza - CE, 60822-131' },
+  { name: 'Rio Mar Fortaleza', image: 'rio-mar-fortaleza.png', address: 'R. Des. Lauro Nogueira, 1355 - Papicu, Fortaleza - CE, 60175-055' },
+  { name: 'Parquelândia', image: 'parquelandia.png', address: 'R. Gustavo Sampaio, 1273 - Parquelândia, Fortaleza - CE, 60455-011' },
+  { name: 'North Shopping Bezerra', image: 'north-shopping.png', address: 'Av. Bezerra de Menezes, 2450 - Presidente Kennedy, Fortaleza - CE, 60325-002 (Piso 3)' },
+  { name: 'Aldeota', image: 'aldeota.png', address: 'Av. Barão de Studart, 1182 - Aldeota, Fortaleza - CE, 60120-024' },
+  { name: 'Giga Mall', image: 'giga-mall.png', address: 'R. José Hipólito, 264 - Messejana, Fortaleza - CE, 60871-170 (Térreo)' },
+  { name: 'Rio Mar Kennedy', image: 'rio-mar-kennedy.png', address: 'Av. Srg. Hermínio Sampaio, 3100 - Presidente Kennedy, Fortaleza - CE, 60355-512 (Piso 1)' },
+  { name: 'Shopping Iandê', image: 'iande.png', address: 'Av. Edson da Mota Correia, 620 - Centro, Caucaia - CE, 61600-040 (Subsolo)' },
+  { name: 'Clínica do Coração', image: null, address: 'R. Sen. Pompeu, 474 - Centro, Fortaleza - CE, 60025-000' },
+  { name: 'Fisio Clin', image: null, address: 'R. Angélica Gurgel, 226 - Messejana, Fortaleza - CE, 60871-030' },
+  { name: 'ABI', image: null, address: 'Av. Dom Manuel, 114 - Centro, Fortaleza - CE' }
 ];
 
 const laboratoryGrid = document.getElementById('unitsGrid');
@@ -94,8 +97,14 @@ if (laboratoryGrid && laboratoryTemplate) {
     if (demoLabel) demoLabel.remove();
 
     if (image) {
-      image.className = 'imagem-unidade imagem-local-laboratorio';
-      image.style.backgroundImage = `url("assets/unidades/laboratorio-carlos-ribeiro/${unit.image}")`;
+      image.className = unit.image
+        ? 'imagem-unidade imagem-local-laboratorio'
+        : 'imagem-unidade imagem-unidade-laboratorio';
+      if (unit.image) {
+        image.style.backgroundImage = `url("assets/unidades/laboratorio-carlos-ribeiro/${unit.image}")`;
+      } else {
+        image.style.removeProperty('background-image');
+      }
       image.setAttribute('aria-label', `Fachada do Laboratório Carlos Ribeiro ${unit.name}`);
     }
 
