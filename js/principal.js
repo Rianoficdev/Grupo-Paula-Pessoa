@@ -169,7 +169,7 @@ if (transitGrid && transitTemplate) {
         const fallback = unit.brand === 'Nortetran'
           ? 'assets/logos/empresas/nortetran.png'
           : 'assets/modelos/modelo-unidades.png';
-        image.style.backgroundImage = `url("assets/unidades/transito/${unit.image}"), url("${fallback}")`;
+        image.style.backgroundImage = `url("assets/unidades/transito/${unit.image}?v=20260723-01"), url("${fallback}")`;
         if (unit.brand === 'Nortetran') {
           image.style.backgroundSize = 'cover, 58% auto';
           image.style.backgroundPosition = 'center, center';
