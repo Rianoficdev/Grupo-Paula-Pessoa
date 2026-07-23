@@ -7,3 +7,10 @@ Thumbs.db
 *.log
 *.tmp
 .codex-units-check.png
+
+# Fontes e previews locais usados na preparação das logos
+/.logo-preview.png
+/.nortetran-render.png
+/Logos das empresas.svg
+/logo nortetran.svg
+/assets/icones/empresas/nortetran.svg
