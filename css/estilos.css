@@ -1991,6 +1991,17 @@ Adaptado para o Grupo Paula Pessoa.
     .contatos-unidade a[href*='instagram']::before { content: '@'; }
     .contatos-unidade a[href*='wa.me']::before { content: 'W'; }
     .contatos-unidade a[href^='tel:']::before { content: '\260E'; }
+    .contatos-unidade-callcenter a { white-space: nowrap; }
+    .contatos-unidade-callcenter a[href*='instagram'] {
+      flex-basis: 100%;
+      justify-content: center;
+    }
+    .contatos-unidade-callcenter {
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      justify-content: center;
+    }
+    .contatos-unidade-callcenter a[href*='instagram'] { grid-column: 1 / -1; }
     .divisor-unidade { height: 1px; margin: 18px 0; background: #e1e7ef; }
     .titulo-servicos-unidade { color: #18263a; font-size: 0.86rem; text-align: center; }
     .servicos-unidade { display: grid; justify-items: center; gap: 10px; margin: 14px 0 22px; padding: 0; list-style: none; }
@@ -2046,7 +2057,8 @@ Adaptado para o Grupo Paula Pessoa.
       color: #765d00;
     }
     .cartao-unidade[data-brand='fortran'] .nome-local-unidade,
-    .cartao-unidade[data-brand='fortran'] .endereco-unidade::before {
+    .cartao-unidade[data-brand='fortran'] .endereco-unidade::before,
+    .cartao-unidade[data-brand='fortran'] .contatos-unidade a {
       color: #d5a20b;
     }
     .cartao-unidade[data-brand='fortran'] .divisor-unidade {
@@ -2064,7 +2076,8 @@ Adaptado para o Grupo Paula Pessoa.
       color: #765d00;
     }
     .cartao-unidade[data-brand='nortetran'] .nome-local-unidade,
-    .cartao-unidade[data-brand='nortetran'] .endereco-unidade::before {
+    .cartao-unidade[data-brand='nortetran'] .endereco-unidade::before,
+    .cartao-unidade[data-brand='nortetran'] .contatos-unidade a {
       color: #008fa3;
     }
     .cartao-unidade[data-brand='nortetran'] .divisor-unidade {
@@ -2080,6 +2093,10 @@ Adaptado para o Grupo Paula Pessoa.
       --unit-button-hover-color: #fff;
       border-color: #009caf;
       color: #007582;
+    }
+    .cartao-unidade[data-brand='nortetran'] .acesso-unidade:hover,
+    .cartao-unidade[data-brand='nortetran'] .acesso-unidade:focus-visible {
+      color: #fff;
     }
     .cartao-unidade[data-unit='laboratorio'] .nome-local-unidade,
     .cartao-unidade[data-unit='laboratorio'] .endereco-unidade::before,
@@ -2102,6 +2119,22 @@ Adaptado para o Grupo Paula Pessoa.
     .cartao-unidade[data-unit='laboratorio'] .acesso-unidade:hover {
       border-color: #7040a0;
       color: #fff;
+    }
+    .cartao-unidade[data-unit='toxicologia'] { border-color: #cce9dc; }
+    .cartao-unidade[data-unit='toxicologia'] .nome-local-unidade,
+    .cartao-unidade[data-unit='toxicologia'] .endereco-unidade::before,
+    .cartao-unidade[data-unit='toxicologia'] .contatos-unidade a { color: #079b5d; }
+    .cartao-unidade[data-unit='toxicologia'] .divisor-unidade { background: #bfe5d4; }
+    .cartao-unidade[data-unit='toxicologia'] .servicos-unidade li::before {
+      border-color: #079b5d;
+      background: #effbf5;
+      color: #079b5d;
+    }
+    .cartao-unidade[data-unit='toxicologia'] .acesso-unidade {
+      --unit-button-fill: #079b5d;
+      --unit-button-hover-color: #fff;
+      border-color: #079b5d;
+      color: #087b4c;
     }
     .grade-unidades.visualizacao-lista { grid-template-columns: 1fr; }
     .grade-unidades.visualizacao-lista .cartao-unidade { display: grid; grid-template-columns: minmax(260px, 32%) 1fr; }
@@ -2253,7 +2286,7 @@ Adaptado para o Grupo Paula Pessoa.
     .item-duvida {
       --faq-color: #087bea;
       overflow: hidden;
-      border: 1px solid var(--faq-color);
+      border: 1px solid #159b5b;
       background: #fff;
       transition: box-shadow 0.25s, border-color 0.25s;
     }
@@ -2261,13 +2294,13 @@ Adaptado para o Grupo Paula Pessoa.
     .item-duvida:nth-child(2) { --faq-color: #7040a0; }
     .item-duvida:nth-child(3) { --faq-color: #159b5b; }
     .item-duvida:nth-child(4) { --faq-color: #c99700; }
-    .item-duvida:nth-child(5) { --faq-color: #08a8cc; }
-    .item-duvida:nth-child(6) { --faq-color: #7040a0; }
-    .item-duvida:first-child { border-top: 1px solid var(--faq-color); }
+    .item-duvida:nth-child(5) { --faq-color: #009caf; }
+    .item-duvida:nth-child(6) { --faq-color: #1769e8; }
+    .item-duvida:first-child { border-top: 1px solid #159b5b; }
     .item-duvida:hover,
     .item-duvida.aberto {
-      border-color: var(--faq-color);
-      box-shadow: 0 8px 22px color-mix(in srgb, var(--faq-color) 16%, transparent);
+      border-color: #087a45;
+      box-shadow: 0 8px 22px rgba(8,122,69,0.1);
     }
     .pergunta-duvida {
       display: flex; justify-content: space-between; align-items: center;
@@ -2276,7 +2309,7 @@ Adaptado para o Grupo Paula Pessoa.
       font-size: 0.92rem; font-weight: 600; color: #172033;
       transition: color 0.3s;
     }
-    .pergunta-duvida:hover { color: var(--faq-color); }
+    .pergunta-duvida:hover { color: #087a45; }
     .icone-duvida {
       width: 30px; height: 30px; border-radius: 0;
       border: 1px solid var(--faq-color); flex-shrink: 0;
@@ -2313,100 +2346,388 @@ Adaptado para o Grupo Paula Pessoa.
     .item-duvida.aberto .conteudo-resposta-duvida { padding: 0 20px 20px; }
 
     /* ══════════════════════════════════════════
-       11. CHAMADA PARA ATENDIMENTO
+       11. LOCALIZADOR DE UNIDADES
     ══════════════════════════════════════════ */
-    .secao-chamada { padding: 100px 0; }
-    .interior-chamada {
-      background: var(--accent);
-      border-radius: var(--radius-lg);
-      padding: 80px;
-      display: flex; align-items: center; justify-content: space-between; gap: 48px;
-      position: relative; overflow: hidden;
+    .secao-localizador {
+      padding: 92px 0 104px;
+      background: linear-gradient(150deg, #f8fafb 0%, #f3f6f7 100%);
     }
-    .interior-chamada::before {
+    .conteiner-localizador { max-width: 1440px; }
+    .painel-localizador {
+      padding: 34px 34px 26px;
+      overflow: hidden;
+      border: 1px solid #e4e9e9;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 24px 70px rgba(18,47,55,0.1);
+      position: relative;
+    }
+    .painel-localizador::before { content: none; }
+    .cabecalho-localizador {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+      padding-bottom: 24px;
+      border-bottom: 0;
+    }
+    .introducao-localizador { text-align: center; }
+    .rotulo-localizador {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding: 0;
+      margin-bottom: 18px;
+      border: 0;
+      border-radius: 0;
+      color: #07358b;
+      background: transparent;
+      box-shadow: none;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .rotulo-localizador::before,
+    .rotulo-localizador::after {
       content: '';
-      position: absolute; top: -40%; right: -5%;
-      width: 500px; height: 500px;
-      background: radial-gradient(ellipse at center, rgba(42,219,147,0.22) 0%, transparent 70%);
-      border-radius: 50%; pointer-events: none;
+      width: 38px;
+      height: 2px;
+      background: #1769e8;
     }
-    .conteudo-chamada { position: relative; z-index: 1; max-width: 560px; }
-    .rotulo-chamada {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--accent-light);
-      border: 1px solid rgba(42,219,147,0.32);
-      padding: 6px 14px; border-radius: 100px; margin-bottom: 20px;
-    }
-    .titulo-chamada {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
-      letter-spacing: -0.03em; line-height: 1.15; color: #fff; margin-bottom: 16px;
-    }
-    .titulo-chamada em { font-style: normal; font-family: 'Montserrat', sans-serif; color: var(--accent-light); }
-    .subtitulo-chamada { font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.6); }
-    .acoes-chamada { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 14px; flex-shrink: 0; }
-    .botao-chamada-principal {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 0.9375rem; font-weight: 600; color: #fff;
-      background: var(--gradient-brand); padding: 16px 36px; border-radius: 100px;
+    .rotulo-localizador::after { background: #20a88a; }
+    .introducao-localizador h2 {
+      margin: 0;
+      color: #102d32;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(2.35rem, 4vw, 3.65rem);
+      font-weight: 600;
+      line-height: 0.98;
+      letter-spacing: -0.04em;
       white-space: nowrap;
-      transition: background var(--silk-dur) var(--silk), transform var(--silk-dur) var(--silk);
-      box-shadow: 0 8px 32px rgba(42,219,147,0.24);
     }
-    .botao-chamada-principal:hover { background: var(--accent-light); color: var(--accent); transform: scale(1.02); }
-    .botao-chamada-secundario {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.6);
-      padding: 14px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.1);
+    .introducao-localizador h2 em { color: #087a82; font-style: normal; }
+    .traco-localizador { display: none; }
+    .introducao-localizador p {
+      max-width: none;
+      margin: 10px auto 0;
+      color: #6e7474;
+      font-size: 0.95rem;
+      line-height: 1.6;
       white-space: nowrap;
-      transition: color 0.3s, border-color 0.3s;
     }
-    .botao-chamada-secundario:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+    .filtros-localizador {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .filtro-localizador {
+      width: 122px;
+      min-height: 108px;
+      padding: 14px 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      gap: 8px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: #323c3e;
+      box-shadow: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color 0.25s, color 0.25s, transform 0.25s, box-shadow 0.25s;
+      position: relative;
+    }
+    .filtro-localizador:hover { transform: translateY(-2px); }
+    .filtro-localizador::after {
+      content: none;
+    }
+    .filtro-localizador.ativo {
+      color: #086f77;
+      transform: none;
+      box-shadow: none;
+      filter: drop-shadow(0 5px 7px rgba(12,126,132,0.2));
+    }
+    .filtro-localizador svg { width: 42px; height: 42px; stroke-width: 1.7; }
+    .filtro-localizador[data-locator-brand="all"] svg { width: 30px; height: 30px; }
+    .filtro-localizador img { width: 50px; height: 50px; object-fit: contain; }
+    .filtro-localizador span { line-height: 1.2; }
+    .selecao-localizacao { width: 100%; }
+    .rotulo-localizacao {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #667185;
+      font-size: 0.86rem;
+      font-weight: 500;
+    }
+    .rotulo-localizacao svg { width: 19px; height: 19px; color: #16304b; }
+    .carrossel-localizador {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr) 42px;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .janela-localizador {
+      min-width: 0;
+      overflow: hidden;
+      padding: 8px 2px 10px;
+      mask-image: linear-gradient(to right, transparent, #000 12px, #000 calc(100% - 12px), transparent);
+    }
+    .lista-localizador {
+      display: grid;
+      grid-template-rows: repeat(2, 48px);
+      grid-auto-flow: column;
+      grid-auto-columns: max-content;
+      gap: 12px 14px;
+      min-width: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      touch-action: pan-x;
+      cursor: grab;
+    }
+    .lista-localizador::-webkit-scrollbar { display: none; }
+    .lista-localizador.arrastando { cursor: grabbing; scroll-behavior: auto; scroll-snap-type: none; }
+    .lista-localizador.empresa-unica { justify-content: safe center; }
+    .controle-localizador {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #dfe6e7;
+      border-radius: 50%;
+      background: #fff;
+      color: #16304b;
+      box-shadow: 0 5px 14px rgba(24,45,49,0.09);
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s, color 0.2s, opacity 0.2s;
+    }
+    .controle-localizador:hover:not(:disabled) { color: #fff; background: #16304b; transform: scale(1.06); }
+    .controle-localizador:disabled { opacity: 0.3; cursor: default; box-shadow: none; }
+    .controle-localizador svg { width: 20px; height: 20px; }
+    .botao-unidade-localizador {
+      --cor-empresa: #087f88;
+      flex: 0 0 auto;
+      min-width: 132px;
+      min-height: 48px;
+      padding: 9px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid #e4e8e8;
+      border-radius: 12px;
+      background: #fff;
+      color: #344043;
+      box-shadow: 0 4px 10px rgba(24,45,49,0.05);
+      font: inherit;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.25s;
+      scroll-snap-align: start;
+    }
+    .botao-unidade-localizador[data-brand="laboratorio"] { --cor-empresa: #7040a0; }
+    .botao-unidade-localizador[data-brand="fortran"] { --cor-empresa: #c78324; }
+    .botao-unidade-localizador[data-brand="nortetran"] { --cor-empresa: #008fa3; }
+    .botao-unidade-localizador[data-brand="clinica"] { --cor-empresa: #08a8cc; }
+    .botao-unidade-localizador[data-brand="regis"] { --cor-empresa: #079b5d; }
+    .botao-unidade-localizador:hover,
+    .botao-unidade-localizador.ativo {
+      color: #fff;
+      background: var(--cor-empresa);
+      border-color: var(--cor-empresa);
+      transform: translateY(-2px);
+      box-shadow: 0 7px 17px color-mix(in srgb, var(--cor-empresa) 24%, transparent);
+    }
+    .botao-unidade-localizador svg { width: 20px; height: 20px; color: var(--cor-empresa); }
+    .botao-unidade-localizador:hover svg,
+    .botao-unidade-localizador.ativo svg { color: #fff; }
+    .corpo-localizador {
+      display: grid;
+      grid-template-columns: minmax(390px, 0.78fr) minmax(580px, 1.35fr);
+      gap: 18px;
+      margin-top: 0;
+      scroll-margin-top: 92px;
+    }
+    .cartao-localizador {
+      --cor-empresa: #7040a0;
+      padding: 28px;
+      border: 1px solid #e2e7e7;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(31,54,58,0.07);
+    }
+    .cartao-localizador[data-brand="laboratorio"] { --cor-empresa: #7040a0; }
+    .cartao-localizador[data-brand="fortran"] { --cor-empresa: #c78324; }
+    .cartao-localizador[data-brand="nortetran"] { --cor-empresa: #008fa3; }
+    .cartao-localizador[data-brand="clinica"] { --cor-empresa: #08a8cc; }
+    .cartao-localizador[data-brand="regis"] { --cor-empresa: #079b5d; }
+    .topo-cartao-localizador { display: flex; align-items: center; gap: 22px; }
+    .icone-cartao-localizador {
+      width: 82px; height: 82px;
+      flex: 0 0 auto;
+      display: grid; place-items: center;
+      border: 1px solid #e0e7e7;
+      border-radius: 18px;
+      color: #08777e;
+      background: linear-gradient(145deg, #fff, #f4f8f8);
+      box-shadow: 0 7px 16px rgba(23,66,70,0.08);
+    }
+    .icone-cartao-localizador svg { width: 37px; height: 37px; stroke-width: 1.7; }
+    .icone-cartao-localizador img { width: 54px; height: 54px; object-fit: contain; }
+    .topo-cartao-localizador span { display: block; margin-bottom: 7px; color: var(--cor-empresa); font-weight: 700; }
+    .topo-cartao-localizador h3 {
+      margin: 0;
+      color: #123238;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.65rem, 2.4vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.08;
+    }
+    .descricao-cartao-localizador {
+      margin: 22px 0 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #edf0f0;
+      color: #626b6c;
+      font-size: 0.87rem;
+      line-height: 1.6;
+    }
+    .dados-localizador { display: grid; gap: 14px; }
+    .dados-localizador > div { display: grid; grid-template-columns: 42px 1fr; align-items: center; gap: 13px; }
+    .dados-localizador > div > svg {
+      width: 42px; height: 42px;
+      padding: 10px;
+      border: 1px solid color-mix(in srgb, var(--cor-empresa) 30%, #fff);
+      border-radius: 50%;
+      color: var(--cor-empresa);
+      box-shadow: 0 3px 9px color-mix(in srgb, var(--cor-empresa) 12%, transparent);
+    }
+    .dados-localizador p { margin: 0; min-width: 0; }
+    .dados-localizador p span { display: block; margin-bottom: 2px; color: #7b8283; font-size: 0.76rem; }
+    .dados-localizador a,
+    .dados-localizador strong { color: #253134; font-size: 0.83rem; font-weight: 650; line-height: 1.45; overflow-wrap: anywhere; }
+    .acoes-localizador { display: grid; grid-template-columns: 1fr 0.92fr; gap: 13px; margin-top: 22px; }
+    .acoes-localizador a {
+      min-height: 50px;
+      display: flex; align-items: center; justify-content: center; gap: 9px;
+      border-radius: 11px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .acoes-localizador a:hover { transform: translateY(-2px); }
+    .acoes-localizador svg { width: 19px; height: 19px; }
+    .falar-localizador {
+      color: #fff;
+      background: linear-gradient(115deg, var(--cor-empresa), color-mix(in srgb, var(--cor-empresa) 72%, #fff));
+      box-shadow: 0 7px 16px color-mix(in srgb, var(--cor-empresa) 22%, transparent);
+    }
+    .rota-localizador {
+      color: color-mix(in srgb, var(--cor-empresa) 82%, #222);
+      border: 1px solid color-mix(in srgb, var(--cor-empresa) 35%, #fff);
+      background: color-mix(in srgb, var(--cor-empresa) 13%, #fff);
+      box-shadow: 0 7px 16px color-mix(in srgb, var(--cor-empresa) 12%, transparent);
+    }
+    .mapa-localizador {
+      min-height: 560px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #e2e7e7;
+      border-radius: 20px;
+      background: #e9eeee;
+      box-shadow: 0 8px 22px rgba(31,54,58,0.07);
+    }
+    .mapa-localizador iframe { width: 100%; height: 100%; min-height: 560px; display: block; border: 0; filter: saturate(0.78) contrast(0.96); }
+    .abrir-maps-localizador {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      z-index: 2;
+      min-height: 48px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid #dfe7e7;
+      border-radius: 11px;
+      color: #08747b;
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 7px 18px rgba(24,45,49,0.12);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .abrir-maps-localizador svg { width: 21px; height: 21px; }
 
     /* ══════════════════════════════════════════
        12. RODAPE
     ══════════════════════════════════════════ */
     .rodape {
-      background: #061F52; padding: 80px 0 40px;
-      border-top: 1px solid rgba(255,255,255,0.06);
+      position: relative; overflow: hidden;
+      background: radial-gradient(circle at 78% 24%, #082c68 0, #061f52 38%, #03163b 100%);
+      padding: 40px 0 20px; border-top: 1px solid rgba(93,176,255,0.24);
     }
+    .conteiner-rodape { position: relative; z-index: 1; }
+    .circulo-rodape { position: absolute; border: 1px solid rgba(57,133,215,0.14); border-radius: 50%; pointer-events: none; }
+    .circulo-rodape-superior { width: 650px; height: 650px; top: -490px; right: -80px; }
+    .circulo-rodape-inferior { width: 480px; height: 480px; bottom: -370px; left: -190px; }
     .grade-rodape {
-      display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
-      gap: 48px; margin-bottom: 64px;
+      display: grid; grid-template-columns: minmax(280px, 1.35fr) minmax(220px, 1fr) minmax(150px, 0.72fr) minmax(260px, 1.08fr);
+      gap: 38px; margin-bottom: 28px;
     }
-    .marca-rodape .logo-navegacao { color: #fff; font-size: 1.3rem; margin-bottom: 16px; display: block; }
-    .descricao-marca-rodape { font-size: 0.875rem; line-height: 1.7; color: rgba(255,255,255,0.45); max-width: 240px; }
-    .footer-socials { display: flex; gap: 10px; margin-top: 24px; }
-    .social-btn {
-      width: 36px; height: 36px; border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.1);
-      display: flex; align-items: center; justify-content: center;
-      color: rgba(255,255,255,0.4); font-size: 14px; font-weight: 700;
-      transition: all 0.4s var(--silk);
-    }
-    .social-btn:hover { border-color: var(--accent-light); color: var(--accent-light); }
+    .marca-rodape { padding-right: 36px; border-right: 1px solid rgba(71,163,247,0.42); }
+    .marca-rodape .logo-navegacao { display: block; margin-bottom: 14px; color: #fff; }
+    .marca-rodape .logo-rodape { width: 155px; height: 50px; }
+    .descricao-marca-rodape { max-width: 270px; margin: 0; color: rgba(255,255,255,0.76); font-size: 0.82rem; line-height: 1.5; }
+    .redes-rodape { display: flex; gap: 10px; margin-top: 17px; }
+    .redes-rodape a { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid rgba(75,161,245,0.45); border-radius: 50%; color: #fff; transition: 0.25s; }
+    .redes-rodape a:hover { color: #061f52; background: #fff; border-color: #fff; transform: translateY(-3px); }
+    .redes-rodape svg { width: 19px; height: 19px; }
     .rotulo-coluna-rodape {
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: rgba(255,255,255,0.25);
-      margin-bottom: 20px;
+      display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
+      color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
     }
-    .links-rodape { display: flex; flex-direction: column; gap: 12px; }
+    .rotulo-coluna-rodape span,
+    .contatos-rodape a > span { width: 30px; height: 30px; display: grid; flex: 0 0 30px; place-items: center; border-radius: 50%; background: rgba(25,73,143,0.72); color: #fff; }
+    .rotulo-coluna-rodape svg { width: 16px; height: 16px; }
+    .links-rodape { display: flex; flex-direction: column; gap: 0; }
     .links-rodape a {
-      font-size: 0.875rem; color: rgba(255,255,255,0.5);
-      transition: color 0.3s;
+      padding: 6px 0; border-bottom: 1px solid rgba(77,162,242,0.2);
+      color: rgba(255,255,255,0.83); font-size: 0.78rem; transition: color 0.3s, padding-left 0.3s;
     }
-    .links-rodape a:hover { color: var(--accent-light); }
+    .links-rodape a:hover { padding-left: 6px; color: #73c8ff; }
+    .contatos-rodape { display: flex; flex-direction: column; gap: 0; }
+    .contatos-rodape a { display: grid; grid-template-columns: 30px minmax(0, 1fr); align-items: center; gap: 10px; min-height: 41px; border-bottom: 1px solid rgba(77,162,242,0.2); color: rgba(255,255,255,0.84); }
+    .contatos-rodape a > span { background: transparent; border: 1px solid rgba(75,161,245,0.42); }
+    .contatos-rodape svg { width: 15px; height: 15px; }
+    .contatos-rodape strong { min-width: 0; font-size: 0.73rem; font-weight: 400; overflow-wrap: anywhere; }
+    .contatos-rodape a:hover { color: #73c8ff; }
     .rodape-inferior {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding-top: 32px;
+      border-top: 1px solid rgba(87,172,255,0.34); padding-top: 17px;
       display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
     }
-    .direitos-rodape { font-size: 0.8125rem; color: rgba(255,255,255,0.3); }
+    .direitos-rodape { font-size: 0.84rem; color: rgba(255,255,255,0.68); }
     .direitos-rodape a { color: rgba(255,255,255,0.45); transition: color 0.3s; }
     .direitos-rodape a:hover { color: var(--accent-light); }
-    .legal-rodape { display: flex; gap: 24px; }
-    .legal-rodape a { font-size: 0.8125rem; color: rgba(255,255,255,0.3); transition: color 0.3s; }
+    .legal-rodape { display: flex; gap: 0; }
+    .legal-rodape a { padding: 0 22px; border-right: 1px solid rgba(87,172,255,0.38); font-size: 0.84rem; color: rgba(255,255,255,0.68); transition: color 0.3s; }
+    .legal-rodape a:last-child { padding-right: 0; border-right: 0; }
     .legal-rodape a:hover { color: rgba(255,255,255,0.6); }
 
     /* ══════════════════════════════════════════
@@ -2430,7 +2751,12 @@ Adaptado para o Grupo Paula Pessoa.
       .grade-unidades { grid-auto-columns: calc((100% - 18px) / 2); }
 
       .grade-rodape { grid-template-columns: 1fr 1fr; }
-      .interior-chamada { flex-direction: column; padding: 56px 40px; }
+      .marca-rodape { padding-right: 32px; }
+      .painel-localizador { padding: 36px; }
+      .cabecalho-localizador { display: flex; }
+      .introducao-localizador p { max-width: 620px; }
+      .corpo-localizador { grid-template-columns: minmax(330px, 0.8fr) minmax(420px, 1.2fr); }
+      .filtros-localizador { justify-content: center; }
       .conteudo-duvidas { grid-template-columns: 1fr; }
       .lateral-duvidas { position: static; }
     }
@@ -2457,7 +2783,30 @@ Adaptado para o Grupo Paula Pessoa.
       .testimonials-grid { grid-template-columns: 1fr; }
       .testimonial-card.tall { grid-row: auto; }
       .grade-rodape { grid-template-columns: 1fr; }
-      .interior-chamada { padding: 40px 24px; }
+      .rodape { padding: 72px 0 32px; }
+      .grade-rodape { gap: 46px; margin-bottom: 54px; }
+      .marca-rodape { padding: 0 0 42px; border-right: 0; border-bottom: 1px solid rgba(71,163,247,0.35); }
+      .descricao-marca-rodape { max-width: 420px; }
+      .rotulo-coluna-rodape { margin-bottom: 22px; }
+      .rodape-inferior { align-items: flex-start; flex-direction: column; }
+      .legal-rodape a:first-child { padding-left: 0; }
+      .secao-localizador { padding: 68px 0 76px; }
+      .painel-localizador { padding: 26px 20px; border-radius: 22px; }
+      .introducao-localizador h2 { font-size: clamp(2.4rem, 11vw, 3.4rem); }
+      .introducao-localizador h2 { white-space: normal; }
+      .introducao-localizador p { white-space: normal; }
+      .filtros-localizador {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 3px 2px 10px;
+        scrollbar-width: thin;
+      }
+      .filtro-localizador { flex: 0 0 112px; width: 112px; min-height: 102px; }
+      .corpo-localizador { grid-template-columns: 1fr; }
+      .mapa-localizador,
+      .mapa-localizador iframe { min-height: 410px; }
       .pricing-grid { max-width: 100%; }
       .companies-grid { grid-template-columns: 1fr; }
       .ferramentas-unidades {
@@ -2564,6 +2913,20 @@ Adaptado para o Grupo Paula Pessoa.
       .phone-card[data-pos="right2"] { opacity: 0.35; }
     }
     @media (max-width: 480px) {
+      .painel-localizador { padding: 24px 16px; }
+      .filtros-localizador { gap: 12px; }
+      .carrossel-localizador { grid-template-columns: 34px minmax(0, 1fr) 34px; gap: 6px; }
+      .controle-localizador { width: 34px; height: 34px; }
+      .lista-localizador { gap: 10px; }
+      .botao-unidade-localizador { min-width: 125px; padding-inline: 14px; }
+      .cartao-localizador { padding: 22px 18px; }
+      .topo-cartao-localizador { align-items: flex-start; gap: 15px; }
+      .icone-cartao-localizador { width: 62px; height: 62px; border-radius: 14px; }
+      .icone-cartao-localizador svg { width: 30px; height: 30px; }
+      .topo-cartao-localizador h3 { font-size: 1.65rem; }
+      .acoes-localizador { grid-template-columns: 1fr; }
+      .mapa-localizador,
+      .mapa-localizador iframe { min-height: 340px; }
       .destaque-inicial { padding-top: 86px; }
       .hero-title {
         font-size: 1.85rem;
