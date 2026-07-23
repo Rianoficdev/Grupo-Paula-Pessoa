@@ -73,7 +73,7 @@ const laboratoryUnits = [
   { name: 'Giga Mall', image: 'giga-mall.png', address: 'R. José Hipólito, 264 - Messejana, Fortaleza - CE, 60871-170 (Térreo)' },
   { name: 'Rio Mar Kennedy', image: 'rio-mar-kennedy.png', address: 'Av. Srg. Hermínio Sampaio, 3100 - Presidente Kennedy, Fortaleza - CE, 60355-512 (Piso 1)' },
   { name: 'Shopping Iandê', image: 'iande.png', address: 'Av. Edson da Mota Correia, 620 - Centro, Caucaia - CE, 61600-040 (Subsolo)' },
-  { name: 'Clínica do Coração', image: null, address: 'R. Sen. Pompeu, 474 - Centro, Fortaleza - CE, 60025-000' },
+  { name: 'Clínica do Coração', image: 'clinica-do-coracao.jpg', address: 'R. Sen. Pompeu, 474 - Centro, Fortaleza - CE, 60025-000' },
   { name: 'Fisio Clin', image: 'fisio-clin.jpg', address: 'R. Angélica Gurgel, 226 - Messejana, Fortaleza - CE, 60871-030' },
   { name: 'ABI', image: null, address: 'Av. Dom Manuel, 114 - Centro, Fortaleza - CE' }
 ];
@@ -101,7 +101,7 @@ if (laboratoryGrid && laboratoryTemplate) {
         ? 'imagem-unidade imagem-local-laboratorio'
         : 'imagem-unidade imagem-unidade-laboratorio';
       if (unit.image) {
-        image.style.backgroundImage = `url("assets/unidades/laboratorio-carlos-ribeiro/${unit.image}?v=20260723-01")`;
+        image.style.backgroundImage = `url("assets/unidades/laboratorio-carlos-ribeiro/${unit.image}?v=20260723-02")`;
       } else {
         image.style.removeProperty('background-image');
       }
