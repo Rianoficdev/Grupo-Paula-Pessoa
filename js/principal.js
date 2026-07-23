@@ -75,7 +75,7 @@ const laboratoryUnits = [
   { name: 'Shopping Iandê', image: 'iande.png', address: 'Av. Edson da Mota Correia, 620 - Centro, Caucaia - CE, 61600-040 (Subsolo)' },
   { name: 'Clínica do Coração', image: 'clinica-do-coracao.jpg', address: 'R. Sen. Pompeu, 474 - Centro, Fortaleza - CE, 60025-000' },
   { name: 'Fisio Clin', image: 'fisio-clin.jpg', address: 'R. Angélica Gurgel, 226 - Messejana, Fortaleza - CE, 60871-030' },
-  { name: 'ABI', image: null, address: 'Av. Dom Manuel, 114 - Centro, Fortaleza - CE' }
+  { name: 'ABI', image: 'abi.jpg', address: 'Av. Dom Manuel, 114 - Centro, Fortaleza - CE' }
 ];
 
 const laboratoryGrid = document.getElementById('unitsGrid');
@@ -101,7 +101,7 @@ if (laboratoryGrid && laboratoryTemplate) {
         ? 'imagem-unidade imagem-local-laboratorio'
         : 'imagem-unidade imagem-unidade-laboratorio';
       if (unit.image) {
-        image.style.backgroundImage = `url("assets/unidades/laboratorio-carlos-ribeiro/${unit.image}?v=20260723-02")`;
+        image.style.backgroundImage = `url("assets/unidades/laboratorio-carlos-ribeiro/${unit.image}?v=20260723-03")`;
       } else {
         image.style.removeProperty('background-image');
       }
