@@ -709,7 +709,7 @@ function selectLocatorUnit(unit, selectedButton) {
   const brandLogos = {
     laboratorio: 'assets/icones/empresas/laboratorio-carlos-ribeiro.png',
     fortran: 'assets/icones/empresas/fortran.png',
-    nortetran: 'assets/icones/empresas/nortetran-nova.png?v=20260723-01',
+    nortetran: 'assets/icones/empresas/nortetran-sem-fundo.png?v=20260725-01',
     clinica: 'assets/icones/empresas/clinica-carlos-ribeiro.png',
     regis: 'assets/icones/empresas/regis-juca.png'
   };
