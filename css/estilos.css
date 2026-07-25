@@ -1155,6 +1155,7 @@ Adaptado para o Grupo Paula Pessoa.
       line-height: 0.95;
       letter-spacing: 0;
     }
+    .valor-numero-textual { font-size: clamp(2rem, 3.2vw, 3.3rem); }
     .linha-numero {
       width: 40px;
       height: 2px;
@@ -1269,6 +1270,9 @@ Adaptado para o Grupo Paula Pessoa.
       }
       .secao-numeros-com-imagem .cartao-numero:nth-child(4) .valor-numero {
         left: 3%;
+      }
+      .secao-numeros-com-imagem .valor-numero-textual {
+        font-size: clamp(1rem, 2.05vw, 2.1rem);
       }
       .secao-numeros-com-imagem .linha-numero {
         position: absolute;
