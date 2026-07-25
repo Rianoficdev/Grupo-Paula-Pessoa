@@ -38,7 +38,7 @@ Adaptado para o Grupo Paula Pessoa.
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 80px; }
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
       background: var(--bg);
       color: var(--text-1);
       overflow-x: hidden;
@@ -735,6 +735,7 @@ Adaptado para o Grupo Paula Pessoa.
     .phone-card[data-pos="hidden-right"] { z-index: 4; }
 
     /* Linha de apoio visual da composicao */
+    .carousel-ground {
       position: absolute; bottom: 60px; left: 0; right: 0;
       height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent);
     }
@@ -2655,6 +2656,37 @@ Adaptado para o Grupo Paula Pessoa.
       box-shadow: 0 8px 22px rgba(31,54,58,0.07);
     }
     .mapa-localizador iframe { width: 100%; height: 100%; min-height: 560px; display: block; border: 0; filter: saturate(0.78) contrast(0.96); }
+    .mapa-localizador iframe.mapa-externo-oculto { display: none; }
+    .mapa-consentimento {
+      min-height: 560px;
+      padding: 42px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #23404a;
+      background:
+        radial-gradient(circle at 50% 28%, rgba(26,170,174,0.16), transparent 34%),
+        linear-gradient(145deg, #f5faf9, #e4eeee);
+    }
+    .mapa-consentimento.mapa-consentimento-oculto { display: none; }
+    .mapa-consentimento > svg { width: 48px; height: 48px; margin-bottom: 16px; color: #0b8d92; }
+    .mapa-consentimento h3 { margin: 0 0 10px; color: #123238; font-size: 1.25rem; }
+    .mapa-consentimento p { max-width: 470px; margin: 0 0 22px; color: #5d6c70; font-size: 0.88rem; line-height: 1.65; }
+    .mapa-consentimento button {
+      min-height: 46px;
+      padding: 0 20px;
+      border: 0;
+      border-radius: 10px;
+      color: #fff;
+      background: #087b82;
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 9px 20px rgba(8,123,130,0.22);
+    }
     .abrir-maps-localizador {
       position: absolute;
       right: 22px;
@@ -2726,9 +2758,182 @@ Adaptado para o Grupo Paula Pessoa.
     .direitos-rodape a { color: rgba(255,255,255,0.45); transition: color 0.3s; }
     .direitos-rodape a:hover { color: var(--accent-light); }
     .legal-rodape { display: flex; gap: 0; }
-    .legal-rodape a { padding: 0 22px; border-right: 1px solid rgba(87,172,255,0.38); font-size: 0.84rem; color: rgba(255,255,255,0.68); transition: color 0.3s; }
-    .legal-rodape a:last-child { padding-right: 0; border-right: 0; }
-    .legal-rodape a:hover { color: rgba(255,255,255,0.6); }
+    .legal-rodape a,
+    .legal-rodape button {
+      padding: 0 22px;
+      border: 0;
+      border-right: 1px solid rgba(87,172,255,0.38);
+      color: rgba(255,255,255,0.68);
+      background: transparent;
+      font: inherit;
+      font-size: 0.84rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .legal-rodape > :last-child { padding-right: 0; border-right: 0; }
+    .legal-rodape a:hover,
+    .legal-rodape button:hover { color: #fff; }
+
+    /* Preferências de privacidade e cookies */
+    [hidden] { display: none !important; }
+    .aviso-cookies {
+      position: fixed;
+      z-index: 1000;
+      right: 24px;
+      bottom: 24px;
+      left: 24px;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 20px 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 24px;
+      border: 1px solid #d9e3e7;
+      border-radius: 17px;
+      color: #23363d;
+      background: rgba(255,255,255,0.98);
+      box-shadow: 0 22px 60px rgba(4,27,57,0.23);
+    }
+    .texto-aviso-cookies h2 { margin: 0 0 6px; color: #082348; font-size: 1rem; }
+    .texto-aviso-cookies p { max-width: 720px; margin: 0; color: #5e6c72; font-size: 0.8rem; line-height: 1.55; }
+    .texto-aviso-cookies a { color: #087b82; font-weight: 700; text-decoration: underline; }
+    .acoes-aviso-cookies,
+    .acoes-modal-cookies { display: flex; align-items: center; gap: 9px; }
+    .botao-cookie {
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid #cbd8dd;
+      border-radius: 9px;
+      font: inherit;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .botao-cookie.principal { border-color: #087b82; color: #fff; background: #087b82; }
+    .botao-cookie.secundario { color: #31464e; background: #fff; }
+    .fundo-modal-cookies {
+      position: fixed;
+      z-index: 1010;
+      inset: 0;
+      padding: 22px;
+      display: grid;
+      place-items: center;
+      background: rgba(3,19,40,0.62);
+      backdrop-filter: blur(4px);
+    }
+    .modal-cookies {
+      position: relative;
+      width: min(100%, 590px);
+      max-height: calc(100vh - 44px);
+      overflow-y: auto;
+      padding: 32px;
+      border-radius: 19px;
+      color: #30434a;
+      background: #fff;
+      box-shadow: 0 28px 80px rgba(0,0,0,0.28);
+    }
+    .fechar-modal-cookies {
+      position: absolute;
+      top: 16px;
+      right: 17px;
+      width: 36px;
+      height: 36px;
+      border: 1px solid #dce5e8;
+      border-radius: 50%;
+      color: #385058;
+      background: #fff;
+      font-size: 1.45rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .rotulo-modal-cookies { color: #087b82; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
+    .modal-cookies h2 { margin: 7px 44px 7px 0; color: #082348; font-size: 1.55rem; }
+    .modal-cookies > p { margin: 0 0 22px; color: #64747a; font-size: 0.85rem; line-height: 1.6; }
+    .categoria-cookie {
+      min-height: 82px;
+      padding: 16px 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 22px;
+      border-top: 1px solid #e5ecee;
+    }
+    .categoria-cookie strong { display: block; margin-bottom: 5px; color: #20373f; font-size: 0.9rem; }
+    .categoria-cookie small { display: block; color: #68787e; font-size: 0.75rem; line-height: 1.5; }
+    .estado-cookie { color: #087b82; font-size: 0.72rem; font-weight: 800; white-space: nowrap; }
+    .categoria-cookie-selecionavel { position: relative; cursor: pointer; }
+    .categoria-cookie-selecionavel input { position: absolute; opacity: 0; pointer-events: none; }
+    .controle-cookie {
+      position: relative;
+      width: 46px;
+      height: 26px;
+      border-radius: 99px;
+      background: #c6d1d5;
+      transition: background 0.2s;
+    }
+    .controle-cookie::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .categoria-cookie-selecionavel input:checked + .controle-cookie { background: #087b82; }
+    .categoria-cookie-selecionavel input:checked + .controle-cookie::after { transform: translateX(20px); }
+    .categoria-cookie-selecionavel input:focus-visible + .controle-cookie { outline: 3px solid rgba(8,123,130,0.25); outline-offset: 3px; }
+    .acoes-modal-cookies { justify-content: flex-end; padding-top: 20px; border-top: 1px solid #e5ecee; }
+    body.modal-cookies-aberto { overflow: hidden; }
+
+    /* Páginas de Privacidade e Termos */
+    .pagina-legal { min-height: 100vh; color: #30454d; background: #f4f8f9; }
+    .cabecalho-legal {
+      min-height: 78px;
+      padding: 13px max(24px, calc((100% - 1040px) / 2));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid #dce7e9;
+      background: #fff;
+    }
+    .cabecalho-legal img { width: 158px; height: 50px; object-fit: contain; }
+    .voltar-site { color: #087b82; font-size: 0.84rem; font-weight: 750; }
+    .conteudo-legal {
+      width: min(calc(100% - 40px), 920px);
+      margin: 56px auto;
+      padding: clamp(26px, 5vw, 62px);
+      border: 1px solid #dde7e9;
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 18px 50px rgba(19,48,63,0.08);
+    }
+    .rotulo-legal { margin: 0 0 9px; color: #087b82; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+    .conteudo-legal > h1 { margin: 0; color: #082348; font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.08; }
+    .atualizacao-legal { margin: 12px 0 42px; color: #718087; font-size: 0.82rem; }
+    .conteudo-legal section { padding: 25px 0; border-top: 1px solid #e6edef; }
+    .conteudo-legal section h2 { margin: 0 0 12px; color: #123238; font-size: 1.18rem; }
+    .conteudo-legal section p { margin: 0 0 12px; font-size: 0.92rem; line-height: 1.78; }
+    .conteudo-legal section p:last-child { margin-bottom: 0; }
+    .conteudo-legal section a { color: #087b82; font-weight: 700; text-decoration: underline; }
+    .alerta-legal { margin-top: 18px; padding: 17px 19px; border-left: 4px solid #0a9ca1; border-radius: 0 10px 10px 0; color: #29454c; background: #edf8f8; font-size: 0.86rem; line-height: 1.65; }
+    .rodape-legal {
+      padding: 24px max(24px, calc((100% - 1040px) / 2));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      color: rgba(255,255,255,0.7);
+      background: #061f52;
+      font-size: 0.8rem;
+    }
+    .rodape-legal nav { display: flex; flex-wrap: wrap; gap: 22px; }
+    .rodape-legal a { color: rgba(255,255,255,0.82); }
 
     /* ══════════════════════════════════════════
        AJUSTES RESPONSIVOS
@@ -2759,6 +2964,7 @@ Adaptado para o Grupo Paula Pessoa.
       .filtros-localizador { justify-content: center; }
       .conteudo-duvidas { grid-template-columns: 1fr; }
       .lateral-duvidas { position: static; }
+      .aviso-cookies { grid-template-columns: 1fr; gap: 16px; }
     }
     @media (max-width: 768px) {
       .carousel-zoom { padding: 30px 0 0; }
@@ -2927,6 +3133,18 @@ Adaptado para o Grupo Paula Pessoa.
       .acoes-localizador { grid-template-columns: 1fr; }
       .mapa-localizador,
       .mapa-localizador iframe { min-height: 340px; }
+      .mapa-consentimento { min-height: 340px; padding: 26px 20px; }
+      .aviso-cookies { right: 12px; bottom: 12px; left: 12px; padding: 18px; }
+      .acoes-aviso-cookies { display: grid; grid-template-columns: 1fr 1fr; }
+      .acoes-aviso-cookies .principal { grid-column: 1 / -1; }
+      .botao-cookie { width: 100%; }
+      .modal-cookies { padding: 26px 20px; }
+      .acoes-modal-cookies { display: grid; grid-template-columns: 1fr; }
+      .categoria-cookie { gap: 14px; }
+      .cabecalho-legal { min-height: 68px; }
+      .cabecalho-legal img { width: 125px; height: 40px; }
+      .conteudo-legal { width: min(calc(100% - 24px), 920px); margin: 20px auto; }
+      .rodape-legal { align-items: flex-start; flex-direction: column; }
       .destaque-inicial { padding-top: 86px; }
       .hero-title {
         font-size: 1.85rem;

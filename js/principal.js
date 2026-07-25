@@ -560,8 +560,101 @@ const locatorEmail = document.getElementById('locatorEmail');
 const locatorRoute = document.getElementById('locatorRoute');
 const locatorMapOpen = document.getElementById('locatorMapOpen');
 const locatorMap = document.getElementById('locatorMap');
+const locatorMapConsent = document.getElementById('locatorMapConsent');
+const enableMapsButton = document.getElementById('enableMaps');
 const locatorPrev = document.getElementById('locatorPrev');
 const locatorNext = document.getElementById('locatorNext');
+const cookieBanner = document.getElementById('cookieBanner');
+const cookieModal = document.getElementById('cookieModal');
+const mapsConsentToggle = document.getElementById('mapsConsentToggle');
+const openCookieSettings = document.getElementById('openCookieSettings');
+const closeCookieSettings = document.getElementById('closeCookieSettings');
+const cookieStorageKey = 'gpp_cookie_preferences_v1';
+
+function readCookiePreferences() {
+  try {
+    const savedPreferences = JSON.parse(localStorage.getItem(cookieStorageKey));
+    if (savedPreferences && typeof savedPreferences.maps === 'boolean') return savedPreferences;
+  } catch (error) {
+    console.warn('Não foi possível ler as preferências de privacidade.', error);
+  }
+  return null;
+}
+
+let cookiePreferences = readCookiePreferences();
+
+function mapsAreAllowed() {
+  return cookiePreferences?.maps === true;
+}
+
+function updateEmbeddedMap() {
+  if (!locatorMap) return;
+  const encodedQuery = encodeURIComponent(locatorMap.dataset.mapQuery || '');
+  const mapsAllowed = mapsAreAllowed();
+
+  locatorMap.classList.toggle('mapa-externo-oculto', !mapsAllowed);
+  locatorMapConsent?.classList.toggle('mapa-consentimento-oculto', mapsAllowed);
+  if (mapsAllowed && encodedQuery) {
+    locatorMap.src = `https://www.google.com/maps?q=${encodedQuery}&output=embed`;
+  } else {
+    locatorMap.removeAttribute('src');
+  }
+  if (mapsConsentToggle) mapsConsentToggle.checked = mapsAllowed;
+}
+
+function persistCookiePreferences(maps) {
+  cookiePreferences = {
+    essential: true,
+    maps,
+    updatedAt: new Date().toISOString()
+  };
+  try {
+    localStorage.setItem(cookieStorageKey, JSON.stringify(cookiePreferences));
+  } catch (error) {
+    console.warn('Não foi possível salvar as preferências de privacidade.', error);
+  }
+  cookieBanner?.setAttribute('hidden', '');
+  cookieModal?.setAttribute('hidden', '');
+  document.body.classList.remove('modal-cookies-aberto');
+  updateEmbeddedMap();
+}
+
+function showCookieSettings() {
+  if (!cookieModal) return;
+  if (mapsConsentToggle) mapsConsentToggle.checked = mapsAreAllowed();
+  cookieModal.removeAttribute('hidden');
+  document.body.classList.add('modal-cookies-aberto');
+  closeCookieSettings?.focus();
+}
+
+function hideCookieSettings() {
+  cookieModal?.setAttribute('hidden', '');
+  document.body.classList.remove('modal-cookies-aberto');
+  openCookieSettings?.focus();
+}
+
+document.querySelectorAll('[data-cookie-action]').forEach(button => {
+  button.addEventListener('click', () => {
+    const action = button.dataset.cookieAction;
+    if (action === 'accept') persistCookiePreferences(true);
+    if (action === 'reject') persistCookiePreferences(false);
+    if (action === 'settings') showCookieSettings();
+    if (action === 'save') persistCookiePreferences(Boolean(mapsConsentToggle?.checked));
+  });
+});
+
+openCookieSettings?.addEventListener('click', showCookieSettings);
+closeCookieSettings?.addEventListener('click', hideCookieSettings);
+cookieModal?.addEventListener('click', event => {
+  if (event.target === cookieModal) hideCookieSettings();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && cookieModal && !cookieModal.hidden) hideCookieSettings();
+});
+enableMapsButton?.addEventListener('click', () => persistCookiePreferences(true));
+
+if (!cookiePreferences) cookieBanner?.removeAttribute('hidden');
+updateEmbeddedMap();
 
 function updateLocatorControls() {
   if (!locatorUnitList) return;
@@ -646,7 +739,8 @@ function selectLocatorUnit(unit, selectedButton) {
   const encodedQuery = encodeURIComponent(unit.mapQuery);
   if (locatorRoute) locatorRoute.href = `https://www.google.com/maps/search/?api=1&query=${encodedQuery}`;
   if (locatorMapOpen) locatorMapOpen.href = `https://www.google.com/maps/search/?api=1&query=${encodedQuery}`;
-  if (locatorMap) locatorMap.src = `https://www.google.com/maps?q=${encodedQuery}&output=embed`;
+  if (locatorMap) locatorMap.dataset.mapQuery = unit.mapQuery;
+  updateEmbeddedMap();
 }
 
 function renderLocatorUnits(brand = 'all') {

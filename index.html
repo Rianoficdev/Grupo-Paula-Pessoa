@@ -10,10 +10,7 @@
   https://templatemo.com/tm-622-clearwave
   Uso livre para projetos pessoais e comerciais.
   -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/estilos.css?v=20260723-06" />
+  <link rel="stylesheet" href="css/estilos.css?v=20260725-01" />
 </head>
 <body>
   <!-- Menu exibido em celulares e tablets -->
@@ -517,7 +514,13 @@
           </article>
 
           <div class="mapa-localizador">
-            <iframe id="locatorMap" title="Mapa da unidade selecionada" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Av.%20Bezerra%20de%20Menezes%2C%202450%2C%20Fortaleza%2C%20CE&amp;output=embed"></iframe>
+            <div class="mapa-consentimento" id="locatorMapConsent">
+              <i data-lucide="map-pin" aria-hidden="true"></i>
+              <h3>Mapa externo desativado</h3>
+              <p>Para exibir o Google Maps, autorize a categoria “Mapas externos”. O Google poder&aacute; receber dados como seu endere&ccedil;o IP.</p>
+              <button type="button" id="enableMaps">Autorizar e exibir mapa</button>
+            </div>
+            <iframe id="locatorMap" class="mapa-externo-oculto" title="Mapa da unidade selecionada" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-map-query="Av. Bezerra de Menezes, 2450, Fortaleza, CE"></iframe>
             <a class="abrir-maps-localizador" id="locatorMapOpen" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Bezerra%20de%20Menezes%2C%202450%2C%20Fortaleza%2C%20CE" target="_blank" rel="noopener"><i data-lucide="map" aria-hidden="true"></i>Abrir no Maps</a>
           </div>
         </div>
@@ -572,14 +575,56 @@
       <div class="rodape-inferior">
         <div class="direitos-rodape">© 2026 Grupo Paula Pessoa. Todos os direitos reservados.</div>
         <div class="legal-rodape">
-          <a href="#">Privacidade</a>
-          <a href="#">Termos</a>
+          <a href="privacidade.html">Privacidade</a>
+          <a href="termos.html">Termos</a>
+          <a href="cookies.html">Pol&iacute;tica de Cookies</a>
+          <button type="button" id="openCookieSettings">Cookies</button>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-  <script src="js/principal.js?v=20260723-12"></script>
+  <section class="aviso-cookies" id="cookieBanner" role="dialog" aria-modal="false" aria-labelledby="cookieTitle" hidden>
+    <div class="texto-aviso-cookies">
+      <h2 id="cookieTitle">Sua privacidade importa</h2>
+      <p>Usamos armazenamento estritamente necess&aacute;rio para lembrar suas escolhas. O Google Maps somente ser&aacute; carregado com sua autoriza&ccedil;&atilde;o. Consulte nossa <a href="cookies.html">Pol&iacute;tica de Cookies</a>.</p>
+    </div>
+    <div class="acoes-aviso-cookies">
+      <button class="botao-cookie secundario" type="button" data-cookie-action="reject">Recusar opcionais</button>
+      <button class="botao-cookie secundario" type="button" data-cookie-action="settings">Configurar</button>
+      <button class="botao-cookie principal" type="button" data-cookie-action="accept">Aceitar</button>
+    </div>
+  </section>
+
+  <div class="fundo-modal-cookies" id="cookieModal" hidden>
+    <section class="modal-cookies" role="dialog" aria-modal="true" aria-labelledby="cookieSettingsTitle">
+      <button class="fechar-modal-cookies" id="closeCookieSettings" type="button" aria-label="Fechar prefer&ecirc;ncias">&times;</button>
+      <span class="rotulo-modal-cookies">Privacidade</span>
+      <h2 id="cookieSettingsTitle">Prefer&ecirc;ncias de cookies</h2>
+      <p>Voc&ecirc; pode alterar sua escolha a qualquer momento pelo link “Cookies” no rodap&eacute;.</p>
+      <div class="categoria-cookie">
+        <div>
+          <strong>Estritamente necess&aacute;rios</strong>
+          <small>Guardam sua prefer&ecirc;ncia de privacidade e permitem o funcionamento b&aacute;sico do site.</small>
+        </div>
+        <span class="estado-cookie">Sempre ativos</span>
+      </div>
+      <label class="categoria-cookie categoria-cookie-selecionavel">
+        <div>
+          <strong>Mapas externos</strong>
+          <small>Permitem carregar mapas incorporados do Google. O provedor poder&aacute; tratar dados do dispositivo e da conex&atilde;o.</small>
+        </div>
+        <input id="mapsConsentToggle" type="checkbox" />
+        <span class="controle-cookie" aria-hidden="true"></span>
+      </label>
+      <div class="acoes-modal-cookies">
+        <button class="botao-cookie secundario" type="button" data-cookie-action="reject">Recusar opcionais</button>
+        <button class="botao-cookie principal" type="button" data-cookie-action="save">Salvar prefer&ecirc;ncias</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/vendor/lucide.min.js?v=0.468.0"></script>
+  <script src="js/principal.js?v=20260725-01"></script>
 </body>
 </html>
