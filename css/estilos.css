@@ -1179,6 +1179,9 @@ Adaptado para o Grupo Paula Pessoa.
       font-size: 0.92rem;
       line-height: 1.65;
     }
+    @media (prefers-reduced-motion: reduce) {
+      .area-rotativa { transition: none; }
+    }
 
     /* Arte completa dos indicadores com os dados posicionados sobre os cartoes. */
     @media (min-width: 769px) {
@@ -1275,8 +1278,20 @@ Adaptado para o Grupo Paula Pessoa.
         font-size: clamp(1rem, 2.05vw, 2.1rem);
       }
       .secao-numeros-com-imagem .valor-numero-areas {
-        font-size: clamp(0.68rem, 1.18vw, 1.2rem);
-        line-height: 1.35;
+        font-size: clamp(0.9rem, 1.55vw, 1.6rem);
+        line-height: 1;
+      }
+      .area-rotativa {
+        display: inline-block;
+        transition: opacity 0.32s ease, transform 0.32s ease;
+      }
+      .area-rotativa.saindo {
+        opacity: 0;
+        transform: translateY(-12px);
+      }
+      .area-rotativa.entrando {
+        opacity: 0;
+        transform: translateY(12px);
       }
       .secao-numeros-com-imagem .linha-numero {
         position: absolute;

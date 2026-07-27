@@ -381,6 +381,27 @@ if ('IntersectionObserver' in window) {
   });
 }
 
+// Alterna as áreas de atuação uma a uma no indicador institucional.
+const rotatingArea = document.querySelector('.area-rotativa');
+const areas = ['Saúde', 'Toxicológico', 'Trânsito', 'Laboratório'];
+
+if (rotatingArea && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  let currentArea = 0;
+
+  window.setInterval(() => {
+    rotatingArea.classList.add('saindo');
+
+    window.setTimeout(() => {
+      currentArea = (currentArea + 1) % areas.length;
+      rotatingArea.textContent = areas[currentArea];
+      rotatingArea.classList.remove('saindo');
+      rotatingArea.classList.add('entrando');
+
+      window.requestAnimationFrame(() => rotatingArea.classList.remove('entrando'));
+    }, 320);
+  }, 2600);
+}
+
 // Controla a abertura individual e coletiva das dúvidas frequentes.
 const faqItems = document.querySelectorAll('.item-duvida');
 let allOpen = false;
