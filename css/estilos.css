@@ -1274,6 +1274,10 @@ Adaptado para o Grupo Paula Pessoa.
       .secao-numeros-com-imagem .valor-numero-textual {
         font-size: clamp(1rem, 2.05vw, 2.1rem);
       }
+      .secao-numeros-com-imagem .valor-numero-areas {
+        font-size: clamp(0.68rem, 1.18vw, 1.2rem);
+        line-height: 1.35;
+      }
       .secao-numeros-com-imagem .linha-numero {
         position: absolute;
         top: 40%;
